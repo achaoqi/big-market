@@ -26,4 +26,9 @@
         from strategy
         limit 10
     </select>
+    <select id="queryStrategyByStrategyId" resultMap="dataMap">
+        select <include refid="strategy"/>
+        from strategy
+        where strategy_id=#{strategyId}
+    </select>
 </mapper>

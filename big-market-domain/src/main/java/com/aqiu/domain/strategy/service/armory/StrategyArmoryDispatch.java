@@ -1,8 +1,13 @@
 package com.aqiu.domain.strategy.service.armory;
 
 import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
+import com.aqiu.domain.strategy.model.entity.StrategyEntity;
+import com.aqiu.domain.strategy.model.entity.StrategyRuleEntity;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
+import com.aqiu.types.enums.ResponseCode;
+import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -14,7 +19,7 @@ import java.util.*;
 
 @Service
 @Slf4j
-public class StrategyArmory implements IStrategyArmory{
+public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch{
 
     @Resource
     private IStrategyRepository repository;
@@ -24,6 +29,28 @@ public class StrategyArmory implements IStrategyArmory{
         //查询策略配置
         List<StrategyAwardEntity> strategyAwardEntities = repository.queryStrategyAwardList(strategyId);
         if (CollectionUtils.isEmpty(strategyAwardEntities)) return false;
+        assembleLotteryStrategy(String.valueOf(strategyId),strategyAwardEntities);
+
+//        权重配置策略，适用于rule_weight
+        StrategyEntity strategyEntity=repository.getStrategyEntityByStrategyId(strategyId);
+        String ruleWeight = strategyEntity.getRuleWeight();
+        if (StringUtils.isBlank(ruleWeight)) return true;
+
+        StrategyRuleEntity strategyRuleEntity=repository.queryStrategyRule(strategyId, ruleWeight);
+        if (null==strategyRuleEntity) {
+            throw new AppException(ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL);
+        }
+
+        Map<String, List<Integer>> ruleWeightValueMap = strategyRuleEntity.getRuleWeightValue();
+        ruleWeightValueMap.forEach((k, v) -> {
+            List<StrategyAwardEntity> strategyAwardEntitiesClone=new ArrayList<>(strategyAwardEntities);
+            strategyAwardEntitiesClone.removeIf(entity->!v.contains(entity.getAwardId()));
+            assembleLotteryStrategy(String.valueOf(strategyId).concat("_").concat(k),strategyAwardEntitiesClone);
+        });
+        return true;
+    }
+
+    private void assembleLotteryStrategy(String key,List<StrategyAwardEntity> strategyAwardEntities){
         //求最小概率
         BigDecimal minRate = strategyAwardEntities.stream()
                 .map(StrategyAwardEntity::getAwardRate)
@@ -52,15 +79,22 @@ public class StrategyArmory implements IStrategyArmory{
             shuffleStrategyAwardSearchRateTables.put(i, strategyAwardSearchRateTables.get(i));
         }
 //缓存到redis
-        repository.storeStrategyAwardSearchRateTables(strategyId,shuffleStrategyAwardSearchRateTables.size(),shuffleStrategyAwardSearchRateTables);
-        return true;
+        repository.storeStrategyAwardSearchRateTables(key,shuffleStrategyAwardSearchRateTables.size(),shuffleStrategyAwardSearchRateTables);
     }
 
     @Override
     public Integer getRandomAwardId(Integer strategyId) {
         int rateRange = repository.getRateRange(strategyId);
         int choice = new SecureRandom().nextInt(rateRange);
-        return repository.getStrategyAwardAssemble(strategyId,choice);
+        return repository.getStrategyAwardAssemble(String.valueOf(strategyId),choice);
+    }
+
+    @Override
+    public Integer getRandomAwardId(Integer strategyId, String ruleWeightValue) {
+        String key=String.valueOf(strategyId).concat("_").concat(ruleWeightValue);
+        int rateRange = repository.getRateRange(key);
+        int choice = new SecureRandom().nextInt(rateRange);
+        return repository.getStrategyAwardAssemble(key,choice);
     }
 
     /**

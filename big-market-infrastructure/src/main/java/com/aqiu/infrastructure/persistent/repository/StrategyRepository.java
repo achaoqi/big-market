@@ -1,16 +1,21 @@
 package com.aqiu.infrastructure.persistent.repository;
 
 import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
+import com.aqiu.domain.strategy.model.entity.StrategyEntity;
+import com.aqiu.domain.strategy.model.entity.StrategyRuleEntity;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
 import com.aqiu.infrastructure.persistent.dao.IStrategyAwardDao;
+import com.aqiu.infrastructure.persistent.dao.IStrategyDao;
+import com.aqiu.infrastructure.persistent.dao.IStrategyRuleDao;
+import com.aqiu.infrastructure.persistent.po.Strategy;
 import com.aqiu.infrastructure.persistent.po.StrategyAward;
+import com.aqiu.infrastructure.persistent.po.StrategyRule;
 import com.aqiu.infrastructure.persistent.redis.IRedisService;
 import com.aqiu.types.common.Constants;
 import org.redisson.api.RMap;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,9 +25,12 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Resource
     private IStrategyAwardDao strategyAwardDao;
-
     @Resource
     private IRedisService redisService;
+    @Resource
+    private IStrategyDao strategyDao;
+    @Resource
+    private IStrategyRuleDao strategyRuleDao;
 
     @Override
     public List<StrategyAwardEntity> queryStrategyAwardList(Integer strategyId) {
@@ -44,19 +52,57 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public void storeStrategyAwardSearchRateTables(Integer strategyId, Integer rateRange, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables) {
-        redisService.setValue(Constants.STRATEGY_RATE_RANGE_KEY+strategyId,rateRange.intValue());
-        RMap<Integer, Integer> map = redisService.getMap(Constants.STRATEGY_RATE_TABLE_KEY + strategyId);
+    public void storeStrategyAwardSearchRateTables(String key, Integer rateRange, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables) {
+        redisService.setValue(Constants.STRATEGY_RATE_RANGE_KEY+key, rateRange);
+        RMap<Integer, Integer> map = redisService.getMap(Constants.STRATEGY_RATE_TABLE_KEY + key);
         map.putAll(shuffleStrategyAwardSearchRateTables);
     }
 
     @Override
     public int getRateRange(Integer strategyId) {
-        return redisService.getValue(Constants.STRATEGY_RATE_RANGE_KEY+strategyId);
+        return getRateRange(String.valueOf(strategyId));
     }
 
     @Override
-    public Integer getStrategyAwardAssemble(Integer strategyId, int choice) {
+    public int getRateRange(String key) {
+        return redisService.getValue(Constants.STRATEGY_RATE_RANGE_KEY+key);
+    }
+
+    @Override
+    public Integer getStrategyAwardAssemble(String strategyId, int choice) {
         return redisService.getFromMap(Constants.STRATEGY_RATE_TABLE_KEY+strategyId,choice);
+    }
+
+    @Override
+    public StrategyEntity getStrategyEntityByStrategyId(Integer strategyId) {
+        String key=Constants.STRATEGY_KEY+strategyId;
+        StrategyEntity strategyEntity = redisService.getValue(key);
+        if (strategyEntity!=null){
+            return strategyEntity;
+        }
+        Strategy strategy = strategyDao.queryStrategyByStrategyId(strategyId);
+        strategyEntity = StrategyEntity.builder()
+                .strategyId(strategy.getStrategyId())
+                .strategyDesc(strategy.getStrategyDesc())
+                .ruleModels(strategy.getRuleModels())
+                .build();
+        redisService.setValue(key,strategyEntity);
+        return strategyEntity;
+    }
+
+    @Override
+    public StrategyRuleEntity queryStrategyRule(Integer strategyId, String ruleModel) {
+        StrategyRule req = new StrategyRule();
+        req.setStrategyId(strategyId);
+        req.setRuleModel(ruleModel);
+        StrategyRule strategyRule=strategyRuleDao.queryStrategyRule(req);
+        return StrategyRuleEntity.builder()
+                .strategyId(strategyRule.getStrategyId())
+                .awardId(strategyRule.getAwardId())
+                .ruleType(strategyRule.getRuleType())
+                .ruleModel(strategyRule.getRuleModel())
+                .ruleValue(strategyRule.getRuleValue())
+                .ruleDesc(strategyRule.getRuleDesc())
+                .build();
     }
 }
