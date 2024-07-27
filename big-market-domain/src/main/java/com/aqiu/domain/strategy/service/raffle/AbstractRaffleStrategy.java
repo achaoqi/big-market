@@ -4,7 +4,8 @@ import com.aqiu.domain.strategy.model.entity.RaffleAwardEntity;
 import com.aqiu.domain.strategy.model.entity.RaffleFactorEntity;
 import com.aqiu.domain.strategy.model.entity.RuleActionEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyEntity;
-import com.aqiu.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import com.aqiu.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
+import com.aqiu.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
 import com.aqiu.domain.strategy.service.IRaffleStrategy;
 import com.aqiu.domain.strategy.service.armory.IStrategyDispatch;
@@ -64,10 +65,30 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
 
 //        默认抽奖流程
         Integer awardId = strategyDispatch.getRandomAwardId(strategyId);
+
+//        查询奖品规则 抽奖中(拿到奖品ID时，过滤规则)，抽奖后(扣减完库存后过滤，抽奖中拦截和无库存走兜底)
+        StrategyAwardRuleModelVO strategyAwardRuleModelVO=repository.queryStrategyAwardRuleModel(strategyId,awardId);
+
+//        抽奖中-规则过滤
+        RuleActionEntity<RuleActionEntity.RaffleCenterEntity> ruleActionCenterEntity = this.doCheckRaffleCenterLogic(RaffleFactorEntity.builder()
+                .strategyId(strategyId)
+                .awardId(awardId)
+                .userId(userId)
+                .build(), strategyAwardRuleModelVO.raffleRuleCenterModelList());
+
+        if (RuleLogicCheckTypeVO.TAKE_OVER.getCode().equals(ruleActionCenterEntity.getCode())) {
+            log.info("【临时日志】中将中规则拦截，通过规则后rule_luck_award走兜底奖励");
+            return RaffleAwardEntity.builder()
+                    .awardDesc("中将中规则拦截，通过抽奖后规则 rule_luck_award走兜底奖励")
+                    .build();
+        }
+
         return RaffleAwardEntity.builder()
                 .awardId(awardId)
                 .build();
     }
 
     public abstract RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> doCheckRaffleBeforeLogic(RaffleFactorEntity build,String... logics);
+
+    public abstract RuleActionEntity<RuleActionEntity.RaffleCenterEntity> doCheckRaffleCenterLogic(RaffleFactorEntity build,String... logics);
 }

@@ -3,6 +3,7 @@ package com.aqiu.infrastructure.persistent.repository;
 import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyRuleEntity;
+import com.aqiu.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
 import com.aqiu.infrastructure.persistent.dao.IStrategyAwardDao;
 import com.aqiu.infrastructure.persistent.dao.IStrategyDao;
@@ -123,5 +124,14 @@ public class StrategyRepository implements IStrategyRepository {
                 .ruleModels(strategy.getRuleModels())
                 .strategyDesc(strategy.getStrategyDesc())
                 .build();
+    }
+
+    @Override
+    public StrategyAwardRuleModelVO queryStrategyAwardRuleModel(Integer strategyId, Integer awardId) {
+        StrategyAward strategyAward = new StrategyAward();
+        strategyAward.setStrategyId(strategyId);
+        strategyAward.setAwardId(awardId);
+        String ruleModels = strategyAwardDao.queryStrategyAwardRuleModels(strategyAward);
+        return StrategyAwardRuleModelVO.builder().roleModels(ruleModels).build();
     }
 }

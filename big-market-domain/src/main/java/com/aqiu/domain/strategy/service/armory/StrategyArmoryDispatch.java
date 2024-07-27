@@ -63,11 +63,11 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
         //求取概率范围
         BigDecimal rateRange = totalRate.divide(minRateRound, 0, RoundingMode.CEILING);
-        ArrayList<Integer> strategyAwardSearchRateTables=new ArrayList<>(rateRange.intValue());
+        ArrayList<Integer> strategyAwardSearchRateTables=new ArrayList<>();
 //        获取抽奖奖励对应AwardId
         for (StrategyAwardEntity strategyAwardEntity : strategyAwardEntities) {
             BigDecimal awardRate = strategyAwardEntity.getAwardRate();
-            for (int i=0;i<awardRate.multiply(rateRange).setScale(0,RoundingMode.CEILING).intValue();i++){
+            for (int i=0;i<awardRate.divide(totalRate,RoundingMode.DOWN).multiply(rateRange).setScale(0,RoundingMode.CEILING).intValue();i++){
                 strategyAwardSearchRateTables.add(strategyAwardEntity.getAwardId());
             }
         }

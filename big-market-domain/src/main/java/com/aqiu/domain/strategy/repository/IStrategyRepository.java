@@ -3,6 +3,7 @@ package com.aqiu.domain.strategy.repository;
 import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyRuleEntity;
+import com.aqiu.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,4 +26,6 @@ public interface IStrategyRepository {
     String queryStrategyRuleValue(Integer strategyId, Integer awardId, String ruleModel);
 
     StrategyEntity queryStrategyEntityByStrategyId(Integer strategyId);
+
+    StrategyAwardRuleModelVO queryStrategyAwardRuleModel(Integer strategyId, Integer awardId);
 }

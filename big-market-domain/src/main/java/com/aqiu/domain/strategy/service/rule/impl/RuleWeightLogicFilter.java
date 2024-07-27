@@ -2,7 +2,7 @@ package com.aqiu.domain.strategy.service.rule.impl;
 
 import com.aqiu.domain.strategy.model.entity.RuleActionEntity;
 import com.aqiu.domain.strategy.model.entity.RuleMatterEntity;
-import com.aqiu.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import com.aqiu.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
 import com.aqiu.domain.strategy.service.annotation.LogicStrategy;
 import com.aqiu.domain.strategy.service.rule.ILogicFilter;

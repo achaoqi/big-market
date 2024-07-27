@@ -1,4 +1,4 @@
-package com.aqiu.domain.strategy.model.vo;
+package com.aqiu.domain.strategy.model.valobj;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

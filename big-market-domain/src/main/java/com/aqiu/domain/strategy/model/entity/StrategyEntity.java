@@ -36,7 +36,7 @@ public class StrategyEntity {
 
     public String[] ruleModel(){
         if (StringUtils.isBlank(ruleModels)){
-            return null;
+            return new String[0];
         }
         return ruleModels.split(",");
     }
