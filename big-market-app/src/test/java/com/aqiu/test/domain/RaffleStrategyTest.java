@@ -5,8 +5,8 @@ import com.aqiu.domain.strategy.model.entity.RaffleAwardEntity;
 import com.aqiu.domain.strategy.model.entity.RaffleFactorEntity;
 import com.aqiu.domain.strategy.service.IRaffleStrategy;
 import com.aqiu.domain.strategy.service.armory.IStrategyArmory;
-import com.aqiu.domain.strategy.service.rule.impl.RuleLockLogicFilter;
-import com.aqiu.domain.strategy.service.rule.impl.RuleWeightLogicFilter;
+import com.aqiu.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain;
+import com.aqiu.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +24,7 @@ public class RaffleStrategyTest {
     @Resource
     private IRaffleStrategy raffleStrategy;
     @Resource
-    private RuleWeightLogicFilter ruleWeightLogicFilter;
+    private RuleWeightLogicChain ruleWeightLogicFilter;
     @Resource
     private RuleLockLogicFilter ruleLockLogicFilter;
     @Resource

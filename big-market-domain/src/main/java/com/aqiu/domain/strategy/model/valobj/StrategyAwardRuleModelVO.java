@@ -1,6 +1,6 @@
 package com.aqiu.domain.strategy.model.valobj;
 
-import com.aqiu.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import com.aqiu.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import com.aqiu.types.common.Constants;
 import lombok.Builder;
 import lombok.Getter;

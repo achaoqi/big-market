@@ -1,9 +1,9 @@
-package com.aqiu.domain.strategy.service.rule.factory;
+package com.aqiu.domain.strategy.service.rule.filter.factory;
 
 import com.alibaba.fastjson2.util.AnnotationUtils;
 import com.aqiu.domain.strategy.model.entity.RuleActionEntity;
 import com.aqiu.domain.strategy.service.annotation.LogicStrategy;
-import com.aqiu.domain.strategy.service.rule.ILogicFilter;
+import com.aqiu.domain.strategy.service.rule.filter.ILogicFilter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.stereotype.Service;

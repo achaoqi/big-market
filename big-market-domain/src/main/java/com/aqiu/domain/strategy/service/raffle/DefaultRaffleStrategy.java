@@ -5,9 +5,11 @@ import com.aqiu.domain.strategy.model.entity.RuleActionEntity;
 import com.aqiu.domain.strategy.model.entity.RuleMatterEntity;
 import com.aqiu.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
+import com.aqiu.domain.strategy.service.AbstractRaffleStrategy;
 import com.aqiu.domain.strategy.service.armory.IStrategyDispatch;
-import com.aqiu.domain.strategy.service.rule.ILogicFilter;
-import com.aqiu.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import com.aqiu.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import com.aqiu.domain.strategy.service.rule.filter.ILogicFilter;
+import com.aqiu.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -20,12 +22,13 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy{
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     @Resource
     private DefaultLogicFactory logicFactory;
 
-    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch) {
-        super(repository, strategyDispatch);
+    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory chainFactory, DefaultLogicFactory logicFactory) {
+        super(repository, strategyDispatch, chainFactory);
+        this.logicFactory = logicFactory;
     }
 
     @Override
