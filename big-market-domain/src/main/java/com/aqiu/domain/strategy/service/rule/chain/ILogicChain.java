@@ -1,5 +1,7 @@
 package com.aqiu.domain.strategy.service.rule.chain;
 
+import com.aqiu.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+
 /**
  * 责任链接口
  */
@@ -10,5 +12,5 @@ public interface ILogicChain extends ILogicChainArmory{
      * @param strategyId 策略ID
      * @return 奖品ID
      */
-    Integer logic(String userId,Integer strategyId);
+    DefaultChainFactory.StrategyAwardVO logic(String userId, Integer strategyId);
 }

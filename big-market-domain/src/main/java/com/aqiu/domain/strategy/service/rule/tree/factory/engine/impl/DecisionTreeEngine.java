@@ -26,8 +26,8 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
     }
 
     @Override
-    public DefaultTreeFactory.StrategyAwardData process(String userId, Integer strategyId, Integer awardId) {
-        DefaultTreeFactory.StrategyAwardData strategyAwardData=null;
+    public DefaultTreeFactory.StrategyAwardVO process(String userId, Integer strategyId, Integer awardId) {
+        DefaultTreeFactory.StrategyAwardVO strategyAwardData=null;
         String nextNode= ruleTreeVO.getTreeRootRuleNode();
         Map<String, RuleTreeNodeVO> treeNodeMap = ruleTreeVO.getTreeNodeMap();
 
@@ -36,7 +36,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
             ILogicTreeNode iLogicTreeNode = logicTreeNodeGroup.get(nextNode);
             DefaultTreeFactory.TreeActionEntity logicEntity = iLogicTreeNode.logic(userId, strategyId, awardId);
             RuleLogicCheckTypeVO ruleLogicCheckTypeVO = logicEntity.getRuleLogicCheckTypeVO();
-            strategyAwardData = logicEntity.getStrategyAwardData();
+            strategyAwardData = logicEntity.getStrategyAwardVO();
             log.info("决策树引擎 【{}】 treeId:{},node:{},code:{}",ruleTreeVO.getTreeName(),ruleTreeVO.getTreeId(),nextNode,ruleLogicCheckTypeVO.getCode());
             nextNode = nextNode(ruleLogicCheckTypeVO.getCode(),ruleTreeNode.getTreeNodeLineVOList());
             ruleTreeNode=treeNodeMap.get(nextNode);

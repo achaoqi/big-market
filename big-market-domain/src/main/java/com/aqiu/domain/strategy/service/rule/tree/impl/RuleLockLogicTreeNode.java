@@ -15,7 +15,7 @@ public class RuleLockLogicTreeNode implements ILogicTreeNode {
     @Override
     public DefaultTreeFactory.TreeActionEntity logic(String userId, Integer awardId, Integer strategyId) {
         return DefaultTreeFactory.TreeActionEntity.builder()
-                .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.TAKE_OVER)
+                .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.ALLOW)
                 .build();
     }
 }
