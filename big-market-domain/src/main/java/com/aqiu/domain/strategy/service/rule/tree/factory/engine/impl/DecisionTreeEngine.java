@@ -34,7 +34,8 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
         RuleTreeNodeVO ruleTreeNode = treeNodeMap.get(nextNode);
         while (nextNode!=null){
             ILogicTreeNode iLogicTreeNode = logicTreeNodeGroup.get(nextNode);
-            DefaultTreeFactory.TreeActionEntity logicEntity = iLogicTreeNode.logic(userId, strategyId, awardId);
+            String ruleValue = ruleTreeNode.getRuleValue();
+            DefaultTreeFactory.TreeActionEntity logicEntity = iLogicTreeNode.logic(userId, awardId, strategyId,ruleValue);
             RuleLogicCheckTypeVO ruleLogicCheckTypeVO = logicEntity.getRuleLogicCheckTypeVO();
             strategyAwardData = logicEntity.getStrategyAwardVO();
             log.info("决策树引擎 【{}】 treeId:{},node:{},code:{}",ruleTreeVO.getTreeName(),ruleTreeVO.getTreeId(),nextNode,ruleLogicCheckTypeVO.getCode());
@@ -54,7 +55,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
                 return ruleTreeNodeLineVO.getRuleNodeTo();
             }
         }
-        throw new RuntimeException("决策树引擎配置错误 nextNode计算失败");
+        return null;
     }
 
     public boolean decisionLogic(String matterValue, RuleTreeNodeLineVO nodeLine){

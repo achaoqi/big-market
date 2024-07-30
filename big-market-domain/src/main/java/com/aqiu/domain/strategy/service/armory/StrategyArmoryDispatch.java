@@ -4,6 +4,7 @@ import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyRuleEntity;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
+import com.aqiu.types.common.Constants;
 import com.aqiu.types.enums.ResponseCode;
 import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -29,9 +30,17 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
         //查询策略配置
         List<StrategyAwardEntity> strategyAwardEntities = repository.queryStrategyAwardList(strategyId);
         if (CollectionUtils.isEmpty(strategyAwardEntities)) return false;
+
+        for (StrategyAwardEntity strategyAward : strategyAwardEntities) {
+            Integer awardId = strategyAward.getAwardId();
+            Integer awardCount = strategyAward.getAwardCountSurplus();
+            cacheStrategyAwardCount(awardId,strategyId,awardCount);
+        }
+
+//        默认装配配置
         assembleLotteryStrategy(String.valueOf(strategyId),strategyAwardEntities);
 
-//        权重配置策略，适用于rule_weight
+//        权重策略配置，适用于rule_weight
         StrategyEntity strategyEntity=repository.getStrategyEntityByStrategyId(strategyId);
         String ruleWeight = strategyEntity.getRuleWeight();
         if (StringUtils.isBlank(ruleWeight)) return true;
@@ -48,6 +57,18 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
             assembleLotteryStrategy(String.valueOf(strategyId).concat("_").concat(k),strategyAwardEntitiesClone);
         });
         return true;
+    }
+
+    private void cacheStrategyAwardCount(Integer awardId, Integer strategyId, Integer awardCount) {
+        String cacheKey = Constants.STRATEGY_AWARD_KEY+strategyId+Constants.UNDERLINE+awardId;
+        repository.cacheStrategyAwardCount(cacheKey,awardCount);
+    }
+
+
+    @Override
+    public Boolean subtractionAwardStock(Long strategyId, Integer awardId) {
+        String cacheKey = Constants.STRATEGY_AWARD_KEY+strategyId+Constants.UNDERLINE+awardId;
+        return repository.subtractionAwardStock(cacheKey);
     }
 
     private void assembleLotteryStrategy(String key,List<StrategyAwardEntity> strategyAwardEntities){

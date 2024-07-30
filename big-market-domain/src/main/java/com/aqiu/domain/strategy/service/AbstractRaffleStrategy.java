@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
  * 抽奖策略抽象类
  */
 @Slf4j
-public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
+public abstract class AbstractRaffleStrategy implements IRaffleStrategy,IRaffleStock {
     protected IStrategyRepository repository;
 
     protected IStrategyDispatch strategyDispatch;
