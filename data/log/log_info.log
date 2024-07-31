@@ -1,16 +1,548 @@
-24-07-24.14:05:23.651 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 28428 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
-24-07-24.14:05:23.651 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-07-24.14:05:24.620 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[com.aqiu]' package. Please check your configuration.
-24-07-24.14:05:25.210 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-24-07-24.14:05:25.211 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
-24-07-24.14:05:25.211 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
-24-07-24.14:05:25.211 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-24-07-24.14:05:25.213 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
-24-07-24.14:05:25.220 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-24-07-24.14:05:25.220 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-07-24.14:05:25.220 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-07-24.14:05:25.390 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-07-24.14:05:25.390 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1660 ms
-24-07-24.14:05:26.116 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
-24-07-24.14:05:26.146 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
-24-07-24.14:05:26.159 [main            ] INFO  Application            - Started Application in 3.324 seconds (JVM running for 6.248)
+24-07-31.09:12:11.689 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 35880 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
+24-07-31.09:12:11.691 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-31.09:12:13.298 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-31.09:12:13.301 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-31.09:12:13.360 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+24-07-31.09:12:14.294 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-31.09:12:14.295 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+24-07-31.09:12:14.295 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+24-07-31.09:12:14.295 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+24-07-31.09:12:14.300 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+24-07-31.09:12:14.311 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-31.09:12:14.311 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-31.09:12:14.311 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-31.09:12:14.516 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-31.09:12:14.516 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2723 ms
+24-07-31.09:12:15.505 [main            ] INFO  Version                - Redisson 3.23.4
+24-07-31.09:12:17.130 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:12:17.149 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:12:18.800 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-31.09:12:18.844 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-31.09:12:18.863 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-31.09:12:18.887 [main            ] INFO  Application            - Started Application in 8.027 seconds (JVM running for 10.608)
+24-07-31.09:12:20.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:12:20.288 [RMI TCP Connection(1)-192.168.245.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-07-31.09:12:20.288 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-07-31.09:12:20.291 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Completed initialization in 3 ms
+24-07-31.09:12:20.303 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-07-31.09:12:20.597 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-07-31.09:12:25.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:12:30.027 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:12:30.172 [http-nio-8091-exec-2] INFO  IRaffleController      - 抽奖开始 strategyId:10003
+24-07-31.09:12:30.259 [http-nio-8091-exec-2] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:10003,awardId:102
+24-07-31.09:12:30.262 [http-nio-8091-exec-2] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 10003 102 rule_default
+24-07-31.09:12:30.295 [http-nio-8091-exec-2] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:102 strategyId:10003 ruleValue:1
+24-07-31.09:12:30.296 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_lock,code:0000
+24-07-31.09:12:30.297 [http-nio-8091-exec-2] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:102 strategyId:10003
+24-07-31.09:12:30.335 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_stock,code:0001
+24-07-31.09:12:30.335 [http-nio-8091-exec-2] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-兜底奖励 userId:system awardId:102 strategyId:10003 ruleValue:101:1,100
+24-07-31.09:12:30.335 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_luck_award,code:0001
+24-07-31.09:12:30.335 [http-nio-8091-exec-2] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 10003 101 1,100
+24-07-31.09:12:30.360 [http-nio-8091-exec-2] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: java.lang.Integer cannot be cast to com.aqiu.domain.strategy.model.entity.StrategyAwardEntity] with root cause
+java.lang.ClassCastException: java.lang.Integer cannot be cast to com.aqiu.domain.strategy.model.entity.StrategyAwardEntity
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.queryStrategyAwardEntity(StrategyRepository.java:257)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$e40cbdf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$40ee3423.queryStrategyAwardEntity(<generated>)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.buildRaffleAwardEntity(AbstractRaffleStrategy.java:58)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:54)
+	at com.aqiu.trigger.http.IRaffleController.randomRaffle(IRaffleController.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.09:12:35.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:12:35.020 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
+24-07-31.09:12:40.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:12:45.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:12:50.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:12:55.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:13:00.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:13:00.808 [http-nio-8091-exec-4] INFO  IRaffleController      - 抽奖开始 strategyId:10003
+24-07-31.09:13:00.815 [http-nio-8091-exec-4] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:10003,awardId:102
+24-07-31.09:13:00.815 [http-nio-8091-exec-4] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 10003 102 rule_default
+24-07-31.09:13:00.829 [http-nio-8091-exec-4] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:102 strategyId:10003 ruleValue:1
+24-07-31.09:13:00.829 [http-nio-8091-exec-4] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_lock,code:0000
+24-07-31.09:13:00.829 [http-nio-8091-exec-4] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:102 strategyId:10003
+24-07-31.09:13:00.834 [http-nio-8091-exec-4] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_stock,code:0001
+24-07-31.09:13:00.835 [http-nio-8091-exec-4] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-兜底奖励 userId:system awardId:102 strategyId:10003 ruleValue:101:1,100
+24-07-31.09:13:00.835 [http-nio-8091-exec-4] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_luck_award,code:0001
+24-07-31.09:13:00.835 [http-nio-8091-exec-4] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 10003 101 1,100
+24-07-31.09:14:22.171 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m31s457ms415µs500ns).
+24-07-31.09:14:22.171 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:14:22.177 [http-nio-8091-exec-4] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: java.lang.Integer cannot be cast to com.aqiu.domain.strategy.model.entity.StrategyAwardEntity] with root cause
+java.lang.ClassCastException: java.lang.Integer cannot be cast to com.aqiu.domain.strategy.model.entity.StrategyAwardEntity
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.queryStrategyAwardEntity(StrategyRepository.java:257)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$e40cbdf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$40ee3423.queryStrategyAwardEntity(<generated>)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.buildRaffleAwardEntity(AbstractRaffleStrategy.java:58)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:54)
+	at com.aqiu.trigger.http.IRaffleController.randomRaffle(IRaffleController.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.09:14:25.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:14:25.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
+24-07-31.09:14:30.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:14:35.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:14:36.994 [http-nio-8091-exec-6] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:10003
+24-07-31.09:14:37.104 [http-nio-8091-exec-6] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:10003 response:Response(code=0000, info=成功, data=true)
+24-07-31.09:14:40.000 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:14:45.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:14:50.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:14:54.227 [http-nio-8091-exec-7] INFO  IRaffleController      - 抽奖开始 strategyId:10003
+24-07-31.09:14:54.239 [http-nio-8091-exec-7] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:10003,awardId:102
+24-07-31.09:14:54.239 [http-nio-8091-exec-7] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 10003 102 rule_default
+24-07-31.09:14:54.256 [http-nio-8091-exec-7] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:102 strategyId:10003 ruleValue:1
+24-07-31.09:14:54.256 [http-nio-8091-exec-7] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_lock,code:0000
+24-07-31.09:14:54.256 [http-nio-8091-exec-7] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:102 strategyId:10003
+24-07-31.09:14:54.260 [http-nio-8091-exec-7] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_stock,code:0001
+24-07-31.09:14:54.260 [http-nio-8091-exec-7] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-兜底奖励 userId:system awardId:102 strategyId:10003 ruleValue:101:1,100
+24-07-31.09:14:54.260 [http-nio-8091-exec-7] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_luck_award,code:0001
+24-07-31.09:14:54.260 [http-nio-8091-exec-7] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 10003 101 1,100
+24-07-31.09:15:23.433 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:16:38.980 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m15s547ms341µs700ns).
+24-07-31.09:16:38.986 [http-nio-8091-exec-7] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: java.lang.Integer cannot be cast to com.aqiu.domain.strategy.model.entity.StrategyAwardEntity] with root cause
+java.lang.ClassCastException: java.lang.Integer cannot be cast to com.aqiu.domain.strategy.model.entity.StrategyAwardEntity
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.queryStrategyAwardEntity(StrategyRepository.java:257)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$e40cbdf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$40ee3423.queryStrategyAwardEntity(<generated>)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.buildRaffleAwardEntity(AbstractRaffleStrategy.java:58)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:54)
+	at com.aqiu.trigger.http.IRaffleController.randomRaffle(IRaffleController.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.09:16:40.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:16:40.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
+24-07-31.09:16:40.557 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-07-31.09:16:40.565 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-07-31.09:16:54.433 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 19596 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
+24-07-31.09:16:54.435 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-31.09:16:56.023 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-31.09:16:56.027 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-31.09:16:56.081 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+24-07-31.09:16:57.006 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-31.09:16:57.007 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+24-07-31.09:16:57.007 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+24-07-31.09:16:57.007 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+24-07-31.09:16:57.011 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+24-07-31.09:16:57.023 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-31.09:16:57.023 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-31.09:16:57.024 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-31.09:16:57.238 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-31.09:16:57.238 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2716 ms
+24-07-31.09:16:58.310 [main            ] INFO  Version                - Redisson 3.23.4
+24-07-31.09:17:00.195 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:17:00.209 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:17:01.559 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-31.09:17:01.599 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-31.09:17:01.617 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-31.09:17:01.639 [main            ] INFO  Application            - Started Application in 8.185 seconds (JVM running for 11.331)
+24-07-31.09:17:03.471 [RMI TCP Connection(1)-192.168.245.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-07-31.09:17:03.472 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-07-31.09:17:03.475 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Completed initialization in 3 ms
+24-07-31.09:17:03.484 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-07-31.09:17:03.758 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-07-31.09:17:05.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:10.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:15.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:15.491 [http-nio-8091-exec-3] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:10003
+24-07-31.09:17:15.820 [http-nio-8091-exec-3] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:10003 response:Response(code=0000, info=成功, data=true)
+24-07-31.09:17:20.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:25.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:30.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:35.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:37.047 [http-nio-8091-exec-2] INFO  IRaffleController      - 抽奖开始 strategyId:10003
+24-07-31.09:17:37.060 [http-nio-8091-exec-2] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:10003,awardId:102
+24-07-31.09:17:37.064 [http-nio-8091-exec-2] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 10003 102 rule_default
+24-07-31.09:17:37.103 [http-nio-8091-exec-2] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:102 strategyId:10003 ruleValue:1
+24-07-31.09:17:37.104 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_lock,code:0000
+24-07-31.09:17:37.106 [http-nio-8091-exec-2] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:102 strategyId:10003
+24-07-31.09:17:37.141 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_stock,code:0001
+24-07-31.09:17:37.141 [http-nio-8091-exec-2] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-兜底奖励 userId:system awardId:102 strategyId:10003 ruleValue:101:1,100
+24-07-31.09:17:37.141 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_luck_award,code:0001
+24-07-31.09:17:37.141 [http-nio-8091-exec-2] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 10003 101 1,100
+24-07-31.09:17:45.969 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:47.483 [http-nio-8091-exec-2] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.queryStrategyAwardEntity(StrategyRepository.java:266)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$e40cbdf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$e3adf390.queryStrategyAwardEntity(<generated>)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.buildRaffleAwardEntity(AbstractRaffleStrategy.java:58)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:54)
+	at com.aqiu.trigger.http.IRaffleController.randomRaffle(IRaffleController.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.09:17:50.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:17:50.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
+24-07-31.09:17:55.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:18:00.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:18:05.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:18:10.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:18:15.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:18:20.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:18:20.376 [http-nio-8091-exec-8] INFO  IRaffleController      - 抽奖开始 strategyId:10003
+24-07-31.09:18:20.384 [http-nio-8091-exec-8] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:10003,awardId:102
+24-07-31.09:18:20.384 [http-nio-8091-exec-8] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 10003 102 rule_default
+24-07-31.09:18:20.399 [http-nio-8091-exec-8] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:102 strategyId:10003 ruleValue:1
+24-07-31.09:18:20.399 [http-nio-8091-exec-8] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_lock,code:0000
+24-07-31.09:18:20.399 [http-nio-8091-exec-8] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:102 strategyId:10003
+24-07-31.09:18:20.403 [http-nio-8091-exec-8] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_stock,code:0001
+24-07-31.09:18:20.403 [http-nio-8091-exec-8] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-兜底奖励 userId:system awardId:102 strategyId:10003 ruleValue:101:1,100
+24-07-31.09:18:20.405 [http-nio-8091-exec-8] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_luck_award,code:0001
+24-07-31.09:18:20.405 [http-nio-8091-exec-8] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 10003 101 1,100
+24-07-31.09:19:12.277 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m8s399ms438µs500ns).
+24-07-31.09:19:12.279 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:19:12.282 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
+24-07-31.09:19:12.282 [http-nio-8091-exec-8] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.queryStrategyAwardEntity(StrategyRepository.java:266)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$e40cbdf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$e3adf390.queryStrategyAwardEntity(<generated>)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.buildRaffleAwardEntity(AbstractRaffleStrategy.java:58)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:54)
+	at com.aqiu.trigger.http.IRaffleController.randomRaffle(IRaffleController.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.09:19:13.894 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-07-31.09:19:13.902 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-07-31.09:19:28.262 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 9724 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
+24-07-31.09:19:28.263 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-31.09:19:29.801 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-31.09:19:29.806 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-31.09:19:29.870 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
+24-07-31.09:19:30.752 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-31.09:19:30.752 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+24-07-31.09:19:30.752 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+24-07-31.09:19:30.753 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+24-07-31.09:19:30.757 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+24-07-31.09:19:30.769 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-31.09:19:30.769 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-31.09:19:30.769 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-31.09:19:30.985 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-31.09:19:30.985 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2644 ms
+24-07-31.09:19:32.065 [main            ] INFO  Version                - Redisson 3.23.4
+24-07-31.09:19:33.900 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:19:33.922 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:19:35.457 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-31.09:19:35.510 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-31.09:19:35.528 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-31.09:19:35.551 [main            ] INFO  Application            - Started Application in 8.22 seconds (JVM running for 11.488)
+24-07-31.09:19:37.368 [RMI TCP Connection(1)-192.168.245.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-07-31.09:19:37.369 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-07-31.09:19:37.372 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Completed initialization in 3 ms
+24-07-31.09:19:37.387 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-07-31.09:19:37.668 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-07-31.09:19:40.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:19:45.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:19:48.539 [http-nio-8091-exec-2] INFO  IRaffleController      - 抽奖开始 strategyId:10003
+24-07-31.09:19:48.626 [http-nio-8091-exec-2] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:10003,awardId:102
+24-07-31.09:19:48.628 [http-nio-8091-exec-2] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 10003 102 rule_default
+24-07-31.09:19:48.658 [http-nio-8091-exec-2] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:102 strategyId:10003 ruleValue:1
+24-07-31.09:19:48.660 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_lock,code:0000
+24-07-31.09:19:48.661 [http-nio-8091-exec-2] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:102 strategyId:10003
+24-07-31.09:19:48.701 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_stock,code:0001
+24-07-31.09:19:48.701 [http-nio-8091-exec-2] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-兜底奖励 userId:system awardId:102 strategyId:10003 ruleValue:101:1,100
+24-07-31.09:19:48.701 [http-nio-8091-exec-2] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_luck_award,code:0001
+24-07-31.09:19:48.702 [http-nio-8091-exec-2] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 10003 101 1,100
+24-07-31.09:19:56.335 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:19:56.517 [http-nio-8091-exec-2] INFO  IRaffleController      - 抽奖完成 strategyId:10003 response:{"awardConfig":"1,100","awardId":101,"sort":1}
+24-07-31.09:20:00.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:20:00.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
+24-07-31.09:20:05.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】

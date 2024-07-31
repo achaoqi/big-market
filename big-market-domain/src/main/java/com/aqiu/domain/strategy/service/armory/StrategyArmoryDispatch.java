@@ -60,14 +60,14 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
     }
 
     private void cacheStrategyAwardCount(Integer awardId, Integer strategyId, Integer awardCount) {
-        String cacheKey = Constants.STRATEGY_AWARD_KEY+strategyId+Constants.UNDERLINE+awardId;
+        String cacheKey = Constants.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
         repository.cacheStrategyAwardCount(cacheKey,awardCount);
     }
 
 
     @Override
     public Boolean subtractionAwardStock(Long strategyId, Integer awardId) {
-        String cacheKey = Constants.STRATEGY_AWARD_KEY+strategyId+Constants.UNDERLINE+awardId;
+        String cacheKey = Constants.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
         return repository.subtractionAwardStock(cacheKey);
     }
 

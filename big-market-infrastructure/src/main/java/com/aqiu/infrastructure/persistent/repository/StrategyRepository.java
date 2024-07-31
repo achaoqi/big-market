@@ -9,6 +9,8 @@ import com.aqiu.infrastructure.persistent.dao.*;
 import com.aqiu.infrastructure.persistent.po.*;
 import com.aqiu.infrastructure.persistent.redis.IRedisService;
 import com.aqiu.types.common.Constants;
+import com.aqiu.types.enums.ResponseCode;
+import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBlockingQueue;
 import org.redisson.api.RDelayedQueue;
@@ -44,7 +46,7 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Override
     public List<StrategyAwardEntity> queryStrategyAwardList(Integer strategyId) {
-        String cacheKey= Constants.STRATEGY_AWARD_KEY+strategyId;
+        String cacheKey= Constants.STRATEGY_AWARD_LIST_KEY+strategyId;
         List<StrategyAwardEntity> entities= redisService.getValue(cacheKey);
         if (entities!=null&& !entities.isEmpty()){
             return entities;
@@ -53,9 +55,12 @@ public class StrategyRepository implements IStrategyRepository {
         entities = strategyAwards.stream().map(obj -> StrategyAwardEntity.builder()
                 .strategyId(obj.getStrategyId())
                 .awardId(obj.getAwardId())
+                .awardTitle(obj.getAwardTitle())
+                .awardSubtitle(obj.getAwardSubtitle())
                 .awardCount(obj.getAwardCount())
                 .awardCountSurplus(obj.getAwardCountSurplus())
                 .awardRate(obj.getAwardRate())
+                .sort(obj.getSort())
                 .build()).collect(Collectors.toList());
         redisService.setValue(cacheKey,entities);
         return entities;
@@ -75,7 +80,11 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Override
     public int getRateRange(String key) {
-        return redisService.getValue(Constants.STRATEGY_RATE_RANGE_KEY+key);
+        String cacheKey = Constants.STRATEGY_RATE_RANGE_KEY + key;
+        if (!redisService.isExists(cacheKey)){
+            throw new AppException(ResponseCode.UN_ASSEMBLED_STRATEGY_ARMORY.getCode(),cacheKey+Constants.COLON+ResponseCode.UN_ASSEMBLED_STRATEGY_ARMORY.getInfo());
+        }
+        return redisService.getValue(cacheKey);
     }
 
     @Override
@@ -240,5 +249,30 @@ public class StrategyRepository implements IStrategyRepository {
         strategyAward.setStrategyId(strategyId);
         strategyAward.setAwardId(awardId);
         strategyAwardDao.updateStrategyAwardStock(strategyAward);
+    }
+
+    @Override
+    public StrategyAwardEntity queryStrategyAwardEntity(Integer strategyId, Integer awardId) {
+        String cacheKey=Constants.STRATEGY_AWARD_KEY+strategyId+Constants.UNDERLINE+awardId;
+        StrategyAwardEntity strategyAwardEntity = redisService.getValue(cacheKey);
+        if (strategyAwardEntity!=null) return strategyAwardEntity;
+
+        StrategyAward strategyAward = new StrategyAward();
+        strategyAward.setStrategyId(strategyId);
+        strategyAward.setAwardId(awardId);
+        StrategyAward strategyAwardRes = strategyAwardDao.queryStrategyAward(strategyAward);
+
+        StrategyAwardEntity response = StrategyAwardEntity.builder()
+                .strategyId(strategyAwardRes.getStrategyId())
+                .awardId(strategyAwardRes.getAwardId())
+                .awardTitle(strategyAwardRes.getAwardTitle())
+                .awardSubtitle(strategyAwardRes.getAwardSubtitle())
+                .awardCount(strategyAwardRes.getAwardCount())
+                .awardCountSurplus(strategyAwardRes.getAwardCountSurplus())
+                .awardRate(strategyAwardRes.getAwardRate())
+                .sort(strategyAwardRes.getSort())
+                .build();
+        redisService.setValue(cacheKey,response);
+        return response;
     }
 }

@@ -1,16 +1,18 @@
-package com.aqiu.domain.strategy.model.entity;
+package com.aqiu.trigger.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 抽奖结果
+ */
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class RaffleAwardEntity {
+@NoArgsConstructor
+public class RaffleResponseDTO {
     private Integer awardId;
-    private String awardConfig;
-    private Integer sort;
+    private Integer awardIndex;
 }

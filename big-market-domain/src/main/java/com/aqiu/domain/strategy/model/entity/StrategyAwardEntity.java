@@ -21,6 +21,14 @@ public class StrategyAwardEntity {
      */
     private Integer awardId;
     /**
+     * 奖品父标题
+     */
+    private String awardTitle;
+    /**
+     * 副标题
+     */
+    private String awardSubtitle;
+    /**
      * 奖品数量
      */
     private Integer awardCount;
@@ -32,4 +40,8 @@ public class StrategyAwardEntity {
      * 奖品中将概率
      */
     private BigDecimal awardRate;
+    /**
+     * 排序
+     */
+    private Integer sort;
 }
