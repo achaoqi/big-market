@@ -546,3 +546,57 @@ java.lang.NullPointerException: null
 24-07-31.09:20:00.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
 24-07-31.09:20:00.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
 24-07-31.09:20:05.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:33:21.693 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 36752 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
+24-07-31.09:33:21.695 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-31.09:33:23.206 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-31.09:33:23.210 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-31.09:33:23.272 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+24-07-31.09:33:24.089 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-31.09:33:24.090 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+24-07-31.09:33:24.090 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+24-07-31.09:33:24.090 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+24-07-31.09:33:24.094 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+24-07-31.09:33:24.106 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-31.09:33:24.107 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-31.09:33:24.107 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-31.09:33:24.308 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-31.09:33:24.308 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2533 ms
+24-07-31.09:33:25.219 [main            ] INFO  Version                - Redisson 3.23.4
+24-07-31.09:33:27.121 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:33:27.131 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:33:28.489 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-31.09:33:28.536 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-31.09:33:28.553 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-31.09:33:28.573 [main            ] INFO  Application            - Started Application in 7.696 seconds (JVM running for 10.57)
+24-07-31.09:33:30.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:33:30.314 [RMI TCP Connection(1)-192.168.245.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-07-31.09:33:30.314 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-07-31.09:33:30.318 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Completed initialization in 4 ms
+24-07-31.09:33:30.322 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-07-31.09:33:30.545 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-07-31.09:33:35.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:33:40.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:33:45.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:33:46.230 [http-nio-8091-exec-1] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:10003
+24-07-31.09:33:46.409 [http-nio-8091-exec-1] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:10003 response:Response(code=0000, info=成功, data=true)
+24-07-31.09:33:50.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:33:53.672 [http-nio-8091-exec-3] INFO  IRaffleController      - 查询奖品列表开始 strategyId:10003
+24-07-31.09:33:53.678 [http-nio-8091-exec-3] INFO  IRaffleController      - 查询奖品列表 strategyId:10003 strategyAwardEntities:[StrategyAwardEntity(strategyId=10003, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=3, awardCountSurplus=3, awardRate=0.0300, sort=1), StrategyAwardEntity(strategyId=10003, awardId=102, awardTitle=随机积分, awardSubtitle=null, awardCount=97, awardCountSurplus=97, awardRate=0.9700, sort=0)]
+24-07-31.09:33:55.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:34:00.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:34:04.018 [http-nio-8091-exec-4] INFO  IRaffleController      - 抽奖开始 strategyId:10003
+24-07-31.09:34:04.027 [http-nio-8091-exec-4] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:10003,awardId:102
+24-07-31.09:34:04.029 [http-nio-8091-exec-4] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 10003 102 rule_default
+24-07-31.09:34:04.061 [http-nio-8091-exec-4] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:102 strategyId:10003 ruleValue:1
+24-07-31.09:34:04.062 [http-nio-8091-exec-4] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_lock,code:0000
+24-07-31.09:34:04.064 [http-nio-8091-exec-4] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:102 strategyId:10003
+24-07-31.09:34:04.100 [http-nio-8091-exec-4] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_stock,code:0001
+24-07-31.09:34:04.100 [http-nio-8091-exec-4] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-兜底奖励 userId:system awardId:102 strategyId:10003 ruleValue:101:1,100
+24-07-31.09:34:04.100 [http-nio-8091-exec-4] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock,node:rule_luck_award,code:0001
+24-07-31.09:34:04.100 [http-nio-8091-exec-4] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 10003 101 1,100
+24-07-31.09:34:04.271 [http-nio-8091-exec-4] INFO  IRaffleController      - 抽奖完成 strategyId:10003 response:{"awardConfig":"1,100","awardId":101,"sort":1}
+24-07-31.09:34:05.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:34:10.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:34:10.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
+24-07-31.09:34:13.878 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-07-31.09:34:13.887 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

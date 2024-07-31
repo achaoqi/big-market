@@ -38,12 +38,12 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
     @Override
     public DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Integer strategyId, Integer awardId) {
         StrategyAwardRuleModelVO strategyAwardRuleModelVO = repository.queryStrategyAwardRuleModel(strategyId, awardId);
-        if (strategyAwardRuleModelVO==null|| StringUtils.isBlank(strategyAwardRuleModelVO.getRoleModels())){
+        if (strategyAwardRuleModelVO==null|| StringUtils.isBlank(strategyAwardRuleModelVO.getRuleModels())){
             return DefaultTreeFactory.StrategyAwardVO.builder()
                     .awardId(awardId)
                     .build();
         }
-        RuleTreeVO ruleTreeVO = repository.queryRuleTreeVOByTreeId(strategyAwardRuleModelVO.getRoleModels());
+        RuleTreeVO ruleTreeVO = repository.queryRuleTreeVOByTreeId(strategyAwardRuleModelVO.getRuleModels());
         if (null==ruleTreeVO){
             throw new RuntimeException("存在抽奖策略配置的规则模型key未在库表rule_tree,rule_tree_node,rule_tree_line 配置正确");
         }

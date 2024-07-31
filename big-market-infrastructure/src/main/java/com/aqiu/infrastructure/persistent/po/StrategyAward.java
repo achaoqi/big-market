@@ -42,7 +42,7 @@ public class StrategyAward {
     /**
      * 规则模型
      */
-    private String roleModels;
+    private String ruleModels;
     /**
      * 排序
      */

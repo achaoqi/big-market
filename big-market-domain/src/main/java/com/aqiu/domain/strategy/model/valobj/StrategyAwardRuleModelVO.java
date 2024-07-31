@@ -9,6 +9,6 @@ public class StrategyAwardRuleModelVO {
     /**
      * 规则模型
      */
-    private String roleModels;
+    private String ruleModels;
 
 }
