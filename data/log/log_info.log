@@ -600,3 +600,644 @@ java.lang.NullPointerException: null
 24-07-31.09:34:10.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:10003 awardId:102
 24-07-31.09:34:13.878 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 24-07-31.09:34:13.887 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-07-31.09:37:00.833 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 7820 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
+24-07-31.09:37:00.836 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-31.09:37:02.528 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-31.09:37:02.533 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-31.09:37:02.589 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
+24-07-31.09:37:03.497 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-31.09:37:03.499 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+24-07-31.09:37:03.500 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+24-07-31.09:37:03.500 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+24-07-31.09:37:03.506 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+24-07-31.09:37:03.528 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-31.09:37:03.530 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-31.09:37:03.530 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-31.09:37:03.761 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-31.09:37:03.761 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2802 ms
+24-07-31.09:37:04.773 [main            ] INFO  Version                - Redisson 3.23.4
+24-07-31.09:37:06.704 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:37:06.726 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:37:08.242 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-31.09:37:08.286 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-31.09:37:08.312 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-31.09:37:08.334 [main            ] INFO  Application            - Started Application in 8.483 seconds (JVM running for 11.402)
+24-07-31.09:37:10.003 [RMI TCP Connection(1)-192.168.245.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-07-31.09:37:10.003 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-07-31.09:37:10.005 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+24-07-31.09:37:10.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:10.011 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-07-31.09:37:10.279 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-07-31.09:37:15.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:20.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:24.139 [http-nio-8091-exec-2] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:10006
+24-07-31.09:37:24.215 [http-nio-8091-exec-2] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:10006 response:Response(code=0000, info=成功, data=false)
+24-07-31.09:37:25.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:30.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:33.263 [http-nio-8091-exec-4] INFO  IRaffleController      - 查询奖品列表开始 strategyId:10006
+24-07-31.09:37:33.272 [http-nio-8091-exec-4] INFO  IRaffleController      - 查询奖品列表 strategyId:10006 strategyAwardEntities:[]
+24-07-31.09:37:35.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:40.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:45.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:50.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:37:55.016 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:38:00.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:38:05.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:38:15.260 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:38:15.260 [http-nio-8091-exec-3] INFO  IRaffleController      - 查询奖品列表开始 strategyId:10006
+24-07-31.09:38:35.117 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:38:58.931 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:38:58.931 [http-nio-8091-exec-3] INFO  IRaffleController      - 查询奖品列表 strategyId:10006 strategyAwardEntities:[]
+24-07-31.09:39:00.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:39:06.157 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:39:06.157 [http-nio-8091-exec-5] INFO  IRaffleController      - 查询奖品列表开始 strategyId:10006
+24-07-31.09:39:52.543 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s611ms406µs500ns).
+24-07-31.09:39:57.118 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:40:39.912 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s369ms590µs100ns).
+24-07-31.09:40:39.912 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:40:39.917 [http-nio-8091-exec-5] INFO  IRaffleController      - 查询奖品列表 strategyId:10006 strategyAwardEntities:[]
+24-07-31.09:40:40.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:40:41.421 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-07-31.09:40:41.432 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-07-31.09:40:47.249 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 12328 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
+24-07-31.09:40:47.251 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-31.09:40:48.951 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-31.09:40:48.955 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-31.09:40:49.022 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+24-07-31.09:40:49.927 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-31.09:40:49.928 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+24-07-31.09:40:49.928 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+24-07-31.09:40:49.928 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+24-07-31.09:40:49.932 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+24-07-31.09:40:49.944 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-31.09:40:49.945 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-31.09:40:49.946 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-31.09:40:50.183 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-31.09:40:50.183 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2840 ms
+24-07-31.09:40:51.180 [main            ] INFO  Version                - Redisson 3.23.4
+24-07-31.09:40:53.053 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:40:53.066 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.09:40:54.461 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-31.09:40:54.504 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-31.09:40:54.525 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-31.09:40:54.547 [main            ] INFO  Application            - Started Application in 8.237 seconds (JVM running for 11.25)
+24-07-31.09:40:55.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:40:56.318 [RMI TCP Connection(2)-192.168.245.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-07-31.09:40:56.318 [RMI TCP Connection(2)-192.168.245.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-07-31.09:40:56.321 [RMI TCP Connection(2)-192.168.245.1] INFO  DispatcherServlet      - Completed initialization in 3 ms
+24-07-31.09:40:56.326 [RMI TCP Connection(1)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-07-31.09:40:56.590 [RMI TCP Connection(1)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-07-31.09:41:00.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:04.758 [http-nio-8091-exec-1] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:100006
+24-07-31.09:41:07.242 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:14.825 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:15.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:15.008 [http-nio-8091-exec-1] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:100006 response:Response(code=0000, info=成功, data=true)
+24-07-31.09:41:20.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:25.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:30.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:31.457 [http-nio-8091-exec-4] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:100006
+24-07-31.09:41:31.496 [http-nio-8091-exec-4] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:100006 response:Response(code=0000, info=成功, data=true)
+24-07-31.09:41:35.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:40.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:45.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:52.068 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:41:52.068 [http-nio-8091-exec-5] INFO  IRaffleController      - 查询奖品列表开始 strategyId:100006
+24-07-31.09:41:52.076 [http-nio-8091-exec-5] INFO  IRaffleController      - 查询奖品列表 strategyId:100006 strategyAwardEntities:[StrategyAwardEntity(strategyId=100006, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=100, awardCountSurplus=88, awardRate=0.0200, sort=1), StrategyAwardEntity(strategyId=100006, awardId=102, awardTitle=7等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=62, awardRate=0.0300, sort=2), StrategyAwardEntity(strategyId=100006, awardId=103, awardTitle=6等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=71, awardRate=0.0300, sort=3), StrategyAwardEntity(strategyId=100006, awardId=104, awardTitle=5等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=4), StrategyAwardEntity(strategyId=100006, awardId=105, awardTitle=4等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=5), StrategyAwardEntity(strategyId=100006, awardId=106, awardTitle=3等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=6), StrategyAwardEntity(strategyId=100006, awardId=107, awardTitle=2等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=7), StrategyAwardEntity(strategyId=100006, awardId=108, awardTitle=1等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=8)]
+24-07-31.09:41:55.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:42:00.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:42:00.192 [http-nio-8091-exec-6] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:00.203 [http-nio-8091-exec-6] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:104
+24-07-31.09:42:00.206 [http-nio-8091-exec-6] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 104 rule_default
+24-07-31.09:42:00.245 [http-nio-8091-exec-6] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:104 strategyId:100006
+24-07-31.09:42:00.291 [http-nio-8091-exec-6] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:00.293 [http-nio-8091-exec-6] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 104 
+24-07-31.09:42:00.454 [http-nio-8091-exec-6] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":104,"sort":4}
+24-07-31.09:42:02.543 [http-nio-8091-exec-3] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:02.549 [http-nio-8091-exec-3] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:108
+24-07-31.09:42:02.550 [http-nio-8091-exec-3] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 108 rule_default
+24-07-31.09:42:02.559 [http-nio-8091-exec-3] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:108 strategyId:100006 ruleValue:2
+24-07-31.09:42:02.559 [http-nio-8091-exec-3] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_lock,code:0000
+24-07-31.09:42:02.559 [http-nio-8091-exec-3] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:108 strategyId:100006
+24-07-31.09:42:02.564 [http-nio-8091-exec-3] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_stock,code:0001
+24-07-31.09:42:02.564 [http-nio-8091-exec-3] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 108 
+24-07-31.09:42:02.569 [http-nio-8091-exec-3] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":108,"sort":8}
+24-07-31.09:42:03.798 [http-nio-8091-exec-7] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:03.805 [http-nio-8091-exec-7] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:104
+24-07-31.09:42:03.808 [http-nio-8091-exec-7] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 104 rule_default
+24-07-31.09:42:03.820 [http-nio-8091-exec-7] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:104 strategyId:100006
+24-07-31.09:42:03.823 [http-nio-8091-exec-7] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:03.823 [http-nio-8091-exec-7] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 104 
+24-07-31.09:42:03.825 [http-nio-8091-exec-7] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":104,"sort":4}
+24-07-31.09:42:04.935 [http-nio-8091-exec-8] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:04.942 [http-nio-8091-exec-8] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:101
+24-07-31.09:42:04.942 [http-nio-8091-exec-8] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 101 rule_default
+24-07-31.09:42:04.947 [http-nio-8091-exec-8] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:101 strategyId:100006
+24-07-31.09:42:04.950 [http-nio-8091-exec-8] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:04.950 [http-nio-8091-exec-8] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 101 
+24-07-31.09:42:04.955 [http-nio-8091-exec-8] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":101,"sort":1}
+24-07-31.09:42:05.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:42:05.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:104
+24-07-31.09:42:05.997 [http-nio-8091-exec-9] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:06.003 [http-nio-8091-exec-9] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:101
+24-07-31.09:42:06.004 [http-nio-8091-exec-9] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 101 rule_default
+24-07-31.09:42:06.008 [http-nio-8091-exec-9] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:101 strategyId:100006
+24-07-31.09:42:06.012 [http-nio-8091-exec-9] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:06.012 [http-nio-8091-exec-9] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 101 
+24-07-31.09:42:06.013 [http-nio-8091-exec-9] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":101,"sort":1}
+24-07-31.09:42:06.974 [http-nio-8091-exec-10] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:06.983 [http-nio-8091-exec-10] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:108
+24-07-31.09:42:06.983 [http-nio-8091-exec-10] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 108 rule_default
+24-07-31.09:42:06.986 [http-nio-8091-exec-10] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:108 strategyId:100006 ruleValue:2
+24-07-31.09:42:06.986 [http-nio-8091-exec-10] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_lock,code:0000
+24-07-31.09:42:06.986 [http-nio-8091-exec-10] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:108 strategyId:100006
+24-07-31.09:42:06.990 [http-nio-8091-exec-10] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_stock,code:0001
+24-07-31.09:42:06.990 [http-nio-8091-exec-10] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 108 
+24-07-31.09:42:06.992 [http-nio-8091-exec-10] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":108,"sort":8}
+24-07-31.09:42:08.045 [http-nio-8091-exec-11] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:08.051 [http-nio-8091-exec-11] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:108
+24-07-31.09:42:08.052 [http-nio-8091-exec-11] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 108 rule_default
+24-07-31.09:42:08.055 [http-nio-8091-exec-11] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:108 strategyId:100006 ruleValue:2
+24-07-31.09:42:08.055 [http-nio-8091-exec-11] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_lock,code:0000
+24-07-31.09:42:08.055 [http-nio-8091-exec-11] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:108 strategyId:100006
+24-07-31.09:42:08.059 [http-nio-8091-exec-11] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_stock,code:0001
+24-07-31.09:42:08.059 [http-nio-8091-exec-11] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 108 
+24-07-31.09:42:08.061 [http-nio-8091-exec-11] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":108,"sort":8}
+24-07-31.09:42:09.142 [http-nio-8091-exec-12] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:09.147 [http-nio-8091-exec-12] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:104
+24-07-31.09:42:09.147 [http-nio-8091-exec-12] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 104 rule_default
+24-07-31.09:42:09.151 [http-nio-8091-exec-12] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:104 strategyId:100006
+24-07-31.09:42:09.153 [http-nio-8091-exec-12] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:09.153 [http-nio-8091-exec-12] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 104 
+24-07-31.09:42:09.154 [http-nio-8091-exec-12] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":104,"sort":4}
+24-07-31.09:42:10.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:42:10.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:108
+24-07-31.09:42:10.173 [http-nio-8091-exec-15] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:10.178 [http-nio-8091-exec-15] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:103
+24-07-31.09:42:10.178 [http-nio-8091-exec-15] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 103 rule_default
+24-07-31.09:42:10.182 [http-nio-8091-exec-15] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:103 strategyId:100006
+24-07-31.09:42:10.184 [http-nio-8091-exec-15] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:10.184 [http-nio-8091-exec-15] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 103 
+24-07-31.09:42:10.189 [http-nio-8091-exec-15] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":103,"sort":3}
+24-07-31.09:42:11.278 [http-nio-8091-exec-13] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:11.284 [http-nio-8091-exec-13] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:104
+24-07-31.09:42:11.284 [http-nio-8091-exec-13] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 104 rule_default
+24-07-31.09:42:11.288 [http-nio-8091-exec-13] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:104 strategyId:100006
+24-07-31.09:42:11.292 [http-nio-8091-exec-13] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:11.292 [http-nio-8091-exec-13] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 104 
+24-07-31.09:42:11.295 [http-nio-8091-exec-13] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":104,"sort":4}
+24-07-31.09:42:12.325 [http-nio-8091-exec-14] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:12.332 [http-nio-8091-exec-14] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:103
+24-07-31.09:42:12.332 [http-nio-8091-exec-14] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 103 rule_default
+24-07-31.09:42:12.335 [http-nio-8091-exec-14] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:103 strategyId:100006
+24-07-31.09:42:12.337 [http-nio-8091-exec-14] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:12.338 [http-nio-8091-exec-14] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 103 
+24-07-31.09:42:12.339 [http-nio-8091-exec-14] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":103,"sort":3}
+24-07-31.09:42:13.328 [http-nio-8091-exec-16] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:13.335 [http-nio-8091-exec-16] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:104
+24-07-31.09:42:13.335 [http-nio-8091-exec-16] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 104 rule_default
+24-07-31.09:42:13.338 [http-nio-8091-exec-16] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:104 strategyId:100006
+24-07-31.09:42:13.340 [http-nio-8091-exec-16] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:13.340 [http-nio-8091-exec-16] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 104 
+24-07-31.09:42:13.343 [http-nio-8091-exec-16] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":104,"sort":4}
+24-07-31.09:42:14.366 [http-nio-8091-exec-17] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:14.371 [http-nio-8091-exec-17] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:107
+24-07-31.09:42:14.371 [http-nio-8091-exec-17] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 107 rule_default
+24-07-31.09:42:14.381 [http-nio-8091-exec-17] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:107 strategyId:100006 ruleValue:1
+24-07-31.09:42:14.381 [http-nio-8091-exec-17] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_1,node:rule_lock,code:0000
+24-07-31.09:42:14.381 [http-nio-8091-exec-17] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:107 strategyId:100006
+24-07-31.09:42:14.384 [http-nio-8091-exec-17] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_1,node:rule_stock,code:0001
+24-07-31.09:42:14.384 [http-nio-8091-exec-17] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 107 
+24-07-31.09:42:14.389 [http-nio-8091-exec-17] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":107,"sort":7}
+24-07-31.09:42:15.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.09:42:15.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:104
+24-07-31.09:42:15.353 [http-nio-8091-exec-18] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:15.363 [http-nio-8091-exec-18] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:104
+24-07-31.09:42:15.364 [http-nio-8091-exec-18] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 104 rule_default
+24-07-31.09:42:15.366 [http-nio-8091-exec-18] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:104 strategyId:100006
+24-07-31.09:42:15.369 [http-nio-8091-exec-18] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:15.369 [http-nio-8091-exec-18] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 104 
+24-07-31.09:42:15.371 [http-nio-8091-exec-18] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":104,"sort":4}
+24-07-31.09:42:16.383 [http-nio-8091-exec-19] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.09:42:16.391 [http-nio-8091-exec-19] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:105
+24-07-31.09:42:16.391 [http-nio-8091-exec-19] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 105 rule_default
+24-07-31.09:42:16.394 [http-nio-8091-exec-19] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:105 strategyId:100006
+24-07-31.09:42:16.397 [http-nio-8091-exec-19] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.09:42:16.397 [http-nio-8091-exec-19] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 105 
+24-07-31.09:42:16.402 [http-nio-8091-exec-19] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":105,"sort":5}
+24-07-31.09:42:19.314 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-07-31.09:42:19.325 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-07-31.11:09:59.916 [main            ] INFO  Application            - Starting Application using Java 1.8.0_332 on chaoqi with PID 36232 (E:\workspace\study_project\big-market\big-market-app\target\classes started by lenovo in E:\workspace\study_project\big-market)
+24-07-31.11:09:59.919 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-31.11:10:01.727 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-31.11:10:01.731 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-31.11:10:01.794 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
+24-07-31.11:10:02.818 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-31.11:10:02.819 [main            ] INFO  AprLifecycleListener   - Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+24-07-31.11:10:02.819 [main            ] INFO  AprLifecycleListener   - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+24-07-31.11:10:02.819 [main            ] INFO  AprLifecycleListener   - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+24-07-31.11:10:02.824 [main            ] INFO  AprLifecycleListener   - OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+24-07-31.11:10:02.838 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-31.11:10:02.839 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-31.11:10:02.839 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-31.11:10:03.132 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-31.11:10:03.133 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3114 ms
+24-07-31.11:10:04.264 [main            ] INFO  Version                - Redisson 3.23.4
+24-07-31.11:10:06.219 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.11:10:06.235 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-07-31.11:10:07.741 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-31.11:10:07.795 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-31.11:10:07.814 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-31.11:10:07.838 [main            ] INFO  Application            - Started Application in 8.884 seconds (JVM running for 12.155)
+24-07-31.11:10:09.622 [RMI TCP Connection(1)-192.168.245.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-07-31.11:10:09.623 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-07-31.11:10:09.625 [RMI TCP Connection(1)-192.168.245.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+24-07-31.11:10:09.630 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-07-31.11:10:09.907 [RMI TCP Connection(2)-192.168.245.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-07-31.11:10:10.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:10.153 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:101
+24-07-31.11:10:15.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:15.017 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:101
+24-07-31.11:10:20.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:20.017 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:108
+24-07-31.11:10:24.964 [http-nio-8091-exec-2] INFO  Http11Processor        - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xf20x010x000x060xee0x030x030xf7fL0xb10xae0xe130xb3!0xa60x060xe90xd0[0x130x810x140x9e0xa0H0xd0:0xb80xf00x87?;TO2-T ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.11:10:24.964 [http-nio-8091-exec-1] INFO  Http11Processor        - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xd20x010x000x060xce0x030x030x02%0xf00xc60xd10x13J*0xfcl0xb40xc9Y0xe70xcdZh0xaeH0xf3*~0x880x900x020x110xe80xc00xf70x90p0xf6 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.11:10:25.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:30.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:35.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:40.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:45.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:50.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:10:55.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:00.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:05.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:10.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:15.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:20.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:25.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:30.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:35.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:40.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:45.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:50.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:11:55.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:00.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:05.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:10.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:15.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:20.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:25.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:30.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:35.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:40.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:45.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:50.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:12:55.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:00.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:05.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:10.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:13.166 [http-nio-8091-exec-19] INFO  IRaffleController      - 查询奖品列表开始 strategyId:100006
+24-07-31.11:13:13.166 [http-nio-8091-exec-20] INFO  IRaffleController      - 查询奖品列表开始 strategyId:100006
+24-07-31.11:13:13.249 [http-nio-8091-exec-20] INFO  IRaffleController      - 查询奖品列表 strategyId:100006 strategyAwardEntities:[StrategyAwardEntity(strategyId=100006, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=100, awardCountSurplus=86, awardRate=0.0200, sort=1), StrategyAwardEntity(strategyId=100006, awardId=102, awardTitle=7等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=62, awardRate=0.0300, sort=2), StrategyAwardEntity(strategyId=100006, awardId=103, awardTitle=6等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=71, awardRate=0.0300, sort=3), StrategyAwardEntity(strategyId=100006, awardId=104, awardTitle=5等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=66, awardRate=0.0300, sort=4), StrategyAwardEntity(strategyId=100006, awardId=105, awardTitle=4等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=5), StrategyAwardEntity(strategyId=100006, awardId=106, awardTitle=3等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=6), StrategyAwardEntity(strategyId=100006, awardId=107, awardTitle=2等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=7), StrategyAwardEntity(strategyId=100006, awardId=108, awardTitle=1等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=8)]
+24-07-31.11:13:13.249 [http-nio-8091-exec-19] INFO  IRaffleController      - 查询奖品列表 strategyId:100006 strategyAwardEntities:[StrategyAwardEntity(strategyId=100006, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=100, awardCountSurplus=86, awardRate=0.0200, sort=1), StrategyAwardEntity(strategyId=100006, awardId=102, awardTitle=7等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=62, awardRate=0.0300, sort=2), StrategyAwardEntity(strategyId=100006, awardId=103, awardTitle=6等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=71, awardRate=0.0300, sort=3), StrategyAwardEntity(strategyId=100006, awardId=104, awardTitle=5等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=66, awardRate=0.0300, sort=4), StrategyAwardEntity(strategyId=100006, awardId=105, awardTitle=4等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=5), StrategyAwardEntity(strategyId=100006, awardId=106, awardTitle=3等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=6), StrategyAwardEntity(strategyId=100006, awardId=107, awardTitle=2等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=7), StrategyAwardEntity(strategyId=100006, awardId=108, awardTitle=1等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=8)]
+24-07-31.11:13:15.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:18.782 [http-nio-8091-exec-22] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:13:18.813 [http-nio-8091-exec-22] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.aqiu.x.api.types.exception.XApiException{code='ERR_BIZ_002', info='big_market_strategy_rate_range_key_100006:抽奖策略配置未装配，请通过IStrategyArmory完成装配'}] with root cause
+com.aqiu.types.exception.AppException: null
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.getRateRange(StrategyRepository.java:85)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.getRateRange(StrategyRepository.java:78)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$e40cbdf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$1ee488f9.getRateRange(<generated>)
+	at com.aqiu.domain.strategy.service.armory.StrategyArmoryDispatch.getRandomAwardId(StrategyArmoryDispatch.java:108)
+	at com.aqiu.domain.strategy.service.rule.chain.impl.DefaultLogicChain.logic(DefaultLogicChain.java:22)
+	at com.aqiu.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:35)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:45)
+	at com.aqiu.trigger.http.IRaffleController.randomRaffle(IRaffleController.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.11:13:20.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:25.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:30.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:31.721 [http-nio-8091-exec-24] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:13:31.726 [http-nio-8091-exec-24] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.aqiu.x.api.types.exception.XApiException{code='ERR_BIZ_002', info='big_market_strategy_rate_range_key_100006:抽奖策略配置未装配，请通过IStrategyArmory完成装配'}] with root cause
+com.aqiu.types.exception.AppException: null
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.getRateRange(StrategyRepository.java:85)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository.getRateRange(StrategyRepository.java:78)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$e40cbdf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.aqiu.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$1ee488f9.getRateRange(<generated>)
+	at com.aqiu.domain.strategy.service.armory.StrategyArmoryDispatch.getRandomAwardId(StrategyArmoryDispatch.java:108)
+	at com.aqiu.domain.strategy.service.rule.chain.impl.DefaultLogicChain.logic(DefaultLogicChain.java:22)
+	at com.aqiu.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:35)
+	at com.aqiu.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:45)
+	at com.aqiu.trigger.http.IRaffleController.randomRaffle(IRaffleController.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+24-07-31.11:13:35.000 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:40.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:45.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:50.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:13:55.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:00.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:05.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:10.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:15.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:20.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:23.459 [http-nio-8091-exec-25] INFO  IRaffleController      - 查询奖品列表开始 strategyId:100006
+24-07-31.11:14:23.459 [http-nio-8091-exec-26] INFO  IRaffleController      - 查询奖品列表开始 strategyId:100006
+24-07-31.11:14:23.469 [http-nio-8091-exec-26] INFO  IRaffleController      - 查询奖品列表 strategyId:100006 strategyAwardEntities:[StrategyAwardEntity(strategyId=100006, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=100, awardCountSurplus=86, awardRate=0.0200, sort=1), StrategyAwardEntity(strategyId=100006, awardId=102, awardTitle=7等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=62, awardRate=0.0300, sort=2), StrategyAwardEntity(strategyId=100006, awardId=103, awardTitle=6等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=71, awardRate=0.0300, sort=3), StrategyAwardEntity(strategyId=100006, awardId=104, awardTitle=5等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=66, awardRate=0.0300, sort=4), StrategyAwardEntity(strategyId=100006, awardId=105, awardTitle=4等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=5), StrategyAwardEntity(strategyId=100006, awardId=106, awardTitle=3等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=6), StrategyAwardEntity(strategyId=100006, awardId=107, awardTitle=2等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=7), StrategyAwardEntity(strategyId=100006, awardId=108, awardTitle=1等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=8)]
+24-07-31.11:14:23.471 [http-nio-8091-exec-25] INFO  IRaffleController      - 查询奖品列表 strategyId:100006 strategyAwardEntities:[StrategyAwardEntity(strategyId=100006, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=100, awardCountSurplus=86, awardRate=0.0200, sort=1), StrategyAwardEntity(strategyId=100006, awardId=102, awardTitle=7等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=62, awardRate=0.0300, sort=2), StrategyAwardEntity(strategyId=100006, awardId=103, awardTitle=6等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=71, awardRate=0.0300, sort=3), StrategyAwardEntity(strategyId=100006, awardId=104, awardTitle=5等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=66, awardRate=0.0300, sort=4), StrategyAwardEntity(strategyId=100006, awardId=105, awardTitle=4等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=5), StrategyAwardEntity(strategyId=100006, awardId=106, awardTitle=3等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=6), StrategyAwardEntity(strategyId=100006, awardId=107, awardTitle=2等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=7), StrategyAwardEntity(strategyId=100006, awardId=108, awardTitle=1等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=8)]
+24-07-31.11:14:25.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:26.490 [http-nio-8091-exec-27] INFO  IRaffleController      - 查询奖品列表开始 strategyId:100006
+24-07-31.11:14:26.493 [http-nio-8091-exec-28] INFO  IRaffleController      - 查询奖品列表开始 strategyId:100006
+24-07-31.11:14:26.493 [http-nio-8091-exec-27] INFO  IRaffleController      - 查询奖品列表 strategyId:100006 strategyAwardEntities:[StrategyAwardEntity(strategyId=100006, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=100, awardCountSurplus=86, awardRate=0.0200, sort=1), StrategyAwardEntity(strategyId=100006, awardId=102, awardTitle=7等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=62, awardRate=0.0300, sort=2), StrategyAwardEntity(strategyId=100006, awardId=103, awardTitle=6等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=71, awardRate=0.0300, sort=3), StrategyAwardEntity(strategyId=100006, awardId=104, awardTitle=5等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=66, awardRate=0.0300, sort=4), StrategyAwardEntity(strategyId=100006, awardId=105, awardTitle=4等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=5), StrategyAwardEntity(strategyId=100006, awardId=106, awardTitle=3等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=6), StrategyAwardEntity(strategyId=100006, awardId=107, awardTitle=2等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=7), StrategyAwardEntity(strategyId=100006, awardId=108, awardTitle=1等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=8)]
+24-07-31.11:14:26.496 [http-nio-8091-exec-28] INFO  IRaffleController      - 查询奖品列表 strategyId:100006 strategyAwardEntities:[StrategyAwardEntity(strategyId=100006, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=100, awardCountSurplus=86, awardRate=0.0200, sort=1), StrategyAwardEntity(strategyId=100006, awardId=102, awardTitle=7等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=62, awardRate=0.0300, sort=2), StrategyAwardEntity(strategyId=100006, awardId=103, awardTitle=6等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=71, awardRate=0.0300, sort=3), StrategyAwardEntity(strategyId=100006, awardId=104, awardTitle=5等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=66, awardRate=0.0300, sort=4), StrategyAwardEntity(strategyId=100006, awardId=105, awardTitle=4等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=74, awardRate=0.0300, sort=5), StrategyAwardEntity(strategyId=100006, awardId=106, awardTitle=3等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=68, awardRate=0.0300, sort=6), StrategyAwardEntity(strategyId=100006, awardId=107, awardTitle=2等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=7), StrategyAwardEntity(strategyId=100006, awardId=108, awardTitle=1等奖, awardSubtitle=null, awardCount=100, awardCountSurplus=72, awardRate=0.0300, sort=8)]
+24-07-31.11:14:27.724 [http-nio-8091-exec-30] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:100006
+24-07-31.11:14:27.791 [http-nio-8091-exec-30] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:100006 response:Response(code=0000, info=成功, data=true)
+24-07-31.11:14:30.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:31.759 [http-nio-8091-exec-32] INFO  IRaffleController      - 抽奖策略装配开始 strategyId:100006
+24-07-31.11:14:31.789 [http-nio-8091-exec-32] INFO  IRaffleController      - 抽奖策略装配完成 strategyId:100006 response:Response(code=0000, info=成功, data=true)
+24-07-31.11:14:35.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:38.286 [http-nio-8091-exec-34] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:14:38.293 [http-nio-8091-exec-34] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:103
+24-07-31.11:14:38.295 [http-nio-8091-exec-34] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 103 rule_default
+24-07-31.11:14:38.323 [http-nio-8091-exec-34] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:103 strategyId:100006
+24-07-31.11:14:38.356 [http-nio-8091-exec-34] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.11:14:38.356 [http-nio-8091-exec-34] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 103 
+24-07-31.11:14:38.540 [http-nio-8091-exec-34] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":103,"sort":3}
+24-07-31.11:14:40.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:45.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:45.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:103
+24-07-31.11:14:50.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:14:55.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:00.017 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:05.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:10.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:15.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:20.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:25.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:30.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:35.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:40.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:42.846 [http-nio-8091-exec-37] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:15:42.854 [http-nio-8091-exec-37] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:107
+24-07-31.11:15:42.854 [http-nio-8091-exec-37] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 107 rule_default
+24-07-31.11:15:42.865 [http-nio-8091-exec-37] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:107 strategyId:100006 ruleValue:1
+24-07-31.11:15:42.865 [http-nio-8091-exec-37] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_1,node:rule_lock,code:0000
+24-07-31.11:15:42.865 [http-nio-8091-exec-37] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:107 strategyId:100006
+24-07-31.11:15:42.869 [http-nio-8091-exec-37] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_1,node:rule_stock,code:0001
+24-07-31.11:15:42.869 [http-nio-8091-exec-37] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 107 
+24-07-31.11:15:42.874 [http-nio-8091-exec-37] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":107,"sort":7}
+24-07-31.11:15:45.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:50.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:50.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:107
+24-07-31.11:15:51.129 [http-nio-8091-exec-38] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:15:51.139 [http-nio-8091-exec-38] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:105
+24-07-31.11:15:51.139 [http-nio-8091-exec-38] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 105 rule_default
+24-07-31.11:15:51.148 [http-nio-8091-exec-38] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:105 strategyId:100006
+24-07-31.11:15:51.148 [http-nio-8091-exec-38] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.11:15:51.148 [http-nio-8091-exec-38] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 105 
+24-07-31.11:15:51.148 [http-nio-8091-exec-38] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":105,"sort":5}
+24-07-31.11:15:55.018 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:15:55.018 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:105
+24-07-31.11:16:00.019 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:05.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:05.244 [http-nio-8091-exec-39] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:16:05.250 [http-nio-8091-exec-39] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:104
+24-07-31.11:16:05.250 [http-nio-8091-exec-39] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 104 rule_default
+24-07-31.11:16:05.253 [http-nio-8091-exec-39] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:104 strategyId:100006
+24-07-31.11:16:05.255 [http-nio-8091-exec-39] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.11:16:05.255 [http-nio-8091-exec-39] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 104 
+24-07-31.11:16:05.259 [http-nio-8091-exec-39] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":104,"sort":4}
+24-07-31.11:16:10.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:10.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:104
+24-07-31.11:16:15.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:18.163 [http-nio-8091-exec-40] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:16:18.163 [http-nio-8091-exec-40] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:105
+24-07-31.11:16:18.163 [http-nio-8091-exec-40] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 105 rule_default
+24-07-31.11:16:18.163 [http-nio-8091-exec-40] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:105 strategyId:100006
+24-07-31.11:16:18.175 [http-nio-8091-exec-40] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.11:16:18.175 [http-nio-8091-exec-40] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 105 
+24-07-31.11:16:18.177 [http-nio-8091-exec-40] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":105,"sort":5}
+24-07-31.11:16:20.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:25.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:25.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:105
+24-07-31.11:16:30.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:35.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:39.669 [http-nio-8091-exec-41] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:16:39.669 [http-nio-8091-exec-41] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:103
+24-07-31.11:16:39.669 [http-nio-8091-exec-41] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 103 rule_default
+24-07-31.11:16:39.683 [http-nio-8091-exec-41] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:103 strategyId:100006
+24-07-31.11:16:39.686 [http-nio-8091-exec-41] INFO  DecisionTreeEngine     - 决策树引擎 【规则树-兜底奖励】 treeId:tree_luck_award,node:rule_stock,code:0001
+24-07-31.11:16:39.686 [http-nio-8091-exec-41] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 103 
+24-07-31.11:16:39.686 [http-nio-8091-exec-41] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":103,"sort":3}
+24-07-31.11:16:40.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:45.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:45.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:103
+24-07-31.11:16:50.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:16:55.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:00.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:05.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:09.432 [http-nio-8091-exec-44] INFO  IRaffleController      - 抽奖开始 strategyId:100006
+24-07-31.11:17:09.432 [http-nio-8091-exec-44] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId:system,strategyId:100006,awardId:108
+24-07-31.11:17:09.432 [http-nio-8091-exec-44] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链system 100006 108 rule_default
+24-07-31.11:17:09.448 [http-nio-8091-exec-44] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:system awardId:108 strategyId:100006 ruleValue:2
+24-07-31.11:17:09.448 [http-nio-8091-exec-44] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_lock,code:0000
+24-07-31.11:17:09.448 [http-nio-8091-exec-44] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:system awardId:108 strategyId:100006
+24-07-31.11:17:09.448 [http-nio-8091-exec-44] INFO  DecisionTreeEngine     - 决策树引擎 【规则树】 treeId:tree_lock_2,node:rule_stock,code:0001
+24-07-31.11:17:09.448 [http-nio-8091-exec-44] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树system 100006 108 
+24-07-31.11:17:09.448 [http-nio-8091-exec-44] INFO  IRaffleController      - 抽奖完成 strategyId:100006 response:{"awardConfig":"","awardId":108,"sort":8}
+24-07-31.11:17:10.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:15.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:15.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存 strategyId:100006 awardId:108
+24-07-31.11:17:20.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:25.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:30.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:35.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:40.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:45.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:50.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:17:55.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:00.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:05.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:10.016 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:15.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:20.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:25.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:30.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:35.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:40.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:45.000 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:50.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:18:55.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:00.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:05.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:10.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:15.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:20.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:25.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:30.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:35.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:40.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:45.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:50.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:19:55.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:00.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:05.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:10.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:15.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:20.016 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:25.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:30.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:35.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:40.016 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:45.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:50.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:20:55.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:21:00.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:21:05.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-07-31.11:21:06.394 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-07-31.11:21:06.404 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
