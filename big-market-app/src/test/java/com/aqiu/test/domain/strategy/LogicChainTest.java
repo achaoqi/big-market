@@ -1,4 +1,4 @@
-package com.aqiu.test.domain;
+package com.aqiu.test.domain.strategy;
 
 import com.aqiu.domain.strategy.service.armory.IStrategyArmory;
 import com.aqiu.domain.strategy.service.rule.chain.ILogicChain;
