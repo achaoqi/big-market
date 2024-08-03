@@ -14,6 +14,7 @@ app:
     cross-origin: '*'
 
 
+
 # 线程池配置
 thread:
   pool:
@@ -98,3 +99,14 @@ redis:
     config:
       host: 192.168.245.135
       port: 6379
+spring:
+  rabbitmq:
+    addresses: 192.168.245.135
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 1 # 每次投递n个消息，消费完在投递n个
+    topic:
+      activity_sku_stock_zero: activity_sku_stock_zero

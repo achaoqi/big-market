@@ -2,6 +2,7 @@ package com.aqiu.domain.activity.service;
 
 import com.aqiu.domain.activity.model.aggregate.CreateOrderAggregate;
 import com.aqiu.domain.activity.model.entity.*;
+import com.aqiu.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import com.aqiu.domain.activity.model.valobj.OrderStateVO;
 import com.aqiu.domain.activity.repository.IActivityRepository;
 import com.aqiu.domain.activity.service.rule.factory.DefaultActivityChainFactory;
@@ -13,7 +14,7 @@ import java.util.Date;
 
 @Service
 @Slf4j
-public class RaffleActivityService extends AbstractRaffleActivity{
+public class RaffleActivityService extends AbstractRaffleActivity implements ISkuStock{
 
     public RaffleActivityService(IActivityRepository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory) {
         super(activityRepository, defaultActivityChainFactory);
@@ -48,5 +49,25 @@ public class RaffleActivityService extends AbstractRaffleActivity{
                 .monthCount(activityCountEntity.getMonthCount())
                 .totalCount(activityCountEntity.getTotalCount())
                 .build();
+    }
+
+    @Override
+    public ActivitySkuStockKeyVO takeQueueValue() throws InterruptedException {
+        return activityRepository.takeQueueValue();
+    }
+
+    @Override
+    public void clearQueueValue() {
+        activityRepository.clearQueueValue();
+    }
+
+    @Override
+    public void updateActivitySkuStock(Long sku) {
+        activityRepository.updateActivitySkuStock(sku);
+    }
+
+    @Override
+    public void clearActivitySkuStock(Long sku) {
+        activityRepository.clearActivitySkuStock(sku);
     }
 }
