@@ -1,4 +1,4 @@
-package com.aqiu.domain.activity.service.rule;
+package com.aqiu.domain.activity.service.quota.rule;
 
 import com.aqiu.domain.activity.model.entity.ActivityCountEntity;
 import com.aqiu.domain.activity.model.entity.ActivityEntity;

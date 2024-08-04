@@ -1,4 +1,4 @@
-package com.aqiu.domain.activity.service.rule;
+package com.aqiu.domain.activity.service.quota.rule;
 
 public abstract class AbstractActionChain implements IActionChain{
     private IActionChain next;

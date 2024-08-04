@@ -1,17 +1,15 @@
-package com.aqiu.domain.activity.service.rule.impl;
+package com.aqiu.domain.activity.service.quota.rule.impl;
 
 import com.aqiu.domain.activity.model.entity.ActivityCountEntity;
 import com.aqiu.domain.activity.model.entity.ActivityEntity;
 import com.aqiu.domain.activity.model.entity.ActivitySkuEntity;
 import com.aqiu.domain.activity.model.valobj.ActivityStateVO;
-import com.aqiu.domain.activity.repository.IActivityRepository;
-import com.aqiu.domain.activity.service.rule.AbstractActionChain;
+import com.aqiu.domain.activity.service.quota.rule.AbstractActionChain;
 import com.aqiu.types.enums.ResponseCode;
 import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.Date;
 
 @Slf4j

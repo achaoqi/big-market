@@ -1,0 +1,52 @@
+24-08-02.11:24:22.949 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_332 on chaoqi with PID 9800 (started by lenovo in E:\workspace\study_project\big-market\big-market-app)
+24-08-02.11:24:22.951 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+24-08-02.11:24:24.730 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-08-02.11:24:24.737 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-08-02.11:24:24.825 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 0 Redis repository interfaces.
+24-08-02.11:24:29.660 [main            ] INFO  Version                - Redisson 3.23.4
+24-08-02.11:24:31.629 [redisson-netty-2-22] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-08-02.11:24:31.630 [redisson-netty-2-23] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-08-02.11:24:35.603 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-08-02.11:24:35.702 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 13.512 seconds (JVM running for 15.391)
+24-08-02.11:24:36.176 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-08-02.11:24:36.680 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-08-02.11:24:36.858 [main            ] INFO  ActivityBaseActionChain - 活动责任链-商品库存校验开始
+24-08-02.11:24:36.859 [main            ] INFO  ActivitySkuStockActionChain - 活动责任链-商品基础信息校验开始
+24-08-02.11:24:36.868 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-08-02.11:24:36.892 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-08-02.11:24:36.944 [main            ] INFO  RaffleOrderTest        - 测试结果:754935624213
+24-08-02.11:25:56.493 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_332 on chaoqi with PID 15992 (started by lenovo in E:\workspace\study_project\big-market\big-market-app)
+24-08-02.11:25:56.495 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+24-08-02.11:25:58.324 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-08-02.11:25:58.331 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-08-02.11:25:58.413 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 0 Redis repository interfaces.
+24-08-02.11:26:02.763 [main            ] INFO  Version                - Redisson 3.23.4
+24-08-02.11:26:04.829 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-08-02.11:26:04.841 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-08-02.11:26:09.422 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-08-02.11:26:09.564 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 13.886 seconds (JVM running for 15.802)
+24-08-02.11:26:10.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，防止产生竞争】
+24-08-02.11:26:10.057 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-08-02.11:26:10.542 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-08-02.11:26:10.674 [main            ] INFO  ActivityBaseActionChain - 活动责任链-商品库存校验开始
+24-08-02.11:26:10.674 [main            ] INFO  ActivitySkuStockActionChain - 活动责任链-商品基础信息校验开始
+24-08-02.11:26:10.682 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-08-02.11:26:10.705 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-08-02.11:26:10.801 [main            ] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突:userId:chaoqi activityId:100301 sku9011
+24-08-02.11:26:57.864 [main            ] INFO  RaffleOrderTest        - Starting RaffleOrderTest using Java 1.8.0_332 on chaoqi with PID 14204 (started by lenovo in E:\workspace\study_project\big-market\big-market-app)
+24-08-02.11:26:57.865 [main            ] INFO  RaffleOrderTest        - The following 1 profile is active: "dev"
+24-08-02.11:26:59.588 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-08-02.11:26:59.598 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-08-02.11:26:59.689 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 0 Redis repository interfaces.
+24-08-02.11:27:05.013 [main            ] INFO  Version                - Redisson 3.23.4
+24-08-02.11:27:07.287 [redisson-netty-2-22] INFO  MasterConnectionPool   - 10 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-08-02.11:27:07.298 [redisson-netty-2-23] INFO  MasterPubSubConnectionPool - 1 connections initialized for 192.168.245.135/192.168.245.135:6379
+24-08-02.11:27:11.984 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-08-02.11:27:12.105 [main            ] INFO  RaffleOrderTest        - Started RaffleOrderTest in 15.112 seconds (JVM running for 17.273)
+24-08-02.11:27:12.667 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-08-02.11:27:13.170 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-08-02.11:27:13.361 [main            ] INFO  ActivityBaseActionChain - 活动责任链-商品库存校验开始
+24-08-02.11:27:13.361 [main            ] INFO  ActivitySkuStockActionChain - 活动责任链-商品基础信息校验开始
+24-08-02.11:27:13.372 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-08-02.11:27:13.405 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-08-02.11:27:13.444 [main            ] INFO  RaffleOrderTest        - 测试结果:275451127918

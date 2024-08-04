@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.aqiu.domain.activity.model.entity.ActivityOrderEntity;
 import com.aqiu.domain.activity.model.entity.ActivityShopCartEntity;
 import com.aqiu.domain.activity.model.entity.SkuRechargeEntity;
-import com.aqiu.domain.activity.service.IRaffleOrder;
+import com.aqiu.domain.activity.service.IRaffleActivityAccountQuotaService;
 import com.aqiu.domain.activity.service.armory.IActivityArmory;
 import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +23,7 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 public class RaffleOrderTest {
     @Resource
-    private IRaffleOrder raffleOrder;
+    private IRaffleActivityAccountQuotaService raffleOrder;
     @Resource
     private IActivityArmory activityArmory;
 
@@ -40,7 +40,7 @@ public class RaffleOrderTest {
                 skuRechargeEntity.setSku(9011L);
                 skuRechargeEntity.setUserId("chaoqi");
                 skuRechargeEntity.setOutBusinessNo(RandomStringUtils.randomNumeric(12));
-                String orderId = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
+                String orderId = raffleOrder.createOrder(skuRechargeEntity);
                 log.info("测试结果:{}",orderId);
             }catch (AppException e){
                 log.warn(e.getInfo());
@@ -50,21 +50,12 @@ public class RaffleOrderTest {
     }
 
     @Test
-    public void test_createRaffleActivityOrder(){
-        ActivityShopCartEntity activityShopCartEntity = new ActivityShopCartEntity();
-        activityShopCartEntity.setUserId("chaoqi");
-        activityShopCartEntity.setSku(9011L);
-        ActivityOrderEntity raffleActivityOrder = raffleOrder.createRaffleActivityOrder(activityShopCartEntity);
-        log.info("测试结果:{}", JSON.toJSONString(raffleActivityOrder));
-    }
-
-    @Test
     public void test_createSkuRechargeOrder_duplicate(){
         SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
         skuRechargeEntity.setUserId("chaoqi");
         skuRechargeEntity.setSku(9011L);
         skuRechargeEntity.setOutBusinessNo("7000910091113");
-        String orderId = raffleOrder.createSkuRechargeOrder(skuRechargeEntity);
+        String orderId = raffleOrder.createOrder(skuRechargeEntity);
         log.info("测试结果:{}", orderId);
     }
 }

@@ -1,19 +1,19 @@
-package com.aqiu.domain.activity.service;
+package com.aqiu.domain.activity.service.quota;
 
 import com.aqiu.domain.activity.model.entity.ActivityCountEntity;
 import com.aqiu.domain.activity.model.entity.ActivityEntity;
 import com.aqiu.domain.activity.model.entity.ActivitySkuEntity;
 import com.aqiu.domain.activity.repository.IActivityRepository;
-import com.aqiu.domain.activity.service.rule.factory.DefaultActivityChainFactory;
+import com.aqiu.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 
 /**
  * 抽奖活动支撑类
  */
-public class RaffleActivitySupport {
+public class RaffleActivityAccountQuotaSupport {
     protected DefaultActivityChainFactory defaultActivityChainFactory;
     protected IActivityRepository activityRepository;
 
-    public RaffleActivitySupport(IActivityRepository activityRepository,DefaultActivityChainFactory defaultActivityChainFactory) {
+    public RaffleActivityAccountQuotaSupport(IActivityRepository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory) {
         this.activityRepository = activityRepository;
         this.defaultActivityChainFactory = defaultActivityChainFactory;
     }

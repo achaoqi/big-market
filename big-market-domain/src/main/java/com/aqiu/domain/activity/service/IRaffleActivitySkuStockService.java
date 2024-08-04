@@ -5,7 +5,7 @@ import com.aqiu.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 /**
  * 活动库存处理操作
  */
-public interface ISkuStock {
+public interface IRaffleActivitySkuStockService {
     /**
      * 获取活动sku库存消耗队列
      * @return
