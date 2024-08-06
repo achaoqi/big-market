@@ -10,8 +10,10 @@ import com.aqiu.domain.award.repository.IAwardRepository;
 import com.aqiu.infrastructure.event.EventPublisher;
 import com.aqiu.infrastructure.persistent.dao.ITaskDao;
 import com.aqiu.infrastructure.persistent.dao.IUserAwardRecordDao;
+import com.aqiu.infrastructure.persistent.dao.IUserRaffleOrderDao;
 import com.aqiu.infrastructure.persistent.po.Task;
 import com.aqiu.infrastructure.persistent.po.UserAwardRecord;
+import com.aqiu.infrastructure.persistent.po.UserRaffleOrder;
 import com.aqiu.types.enums.ResponseCode;
 import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -30,6 +32,8 @@ public class AwardRepository implements IAwardRepository {
     @Resource
     private IUserAwardRecordDao userAwardRecordDao;
     @Resource
+    private IUserRaffleOrderDao userRaffleOrderDao;
+    @Resource
     private IDBRouterStrategy dbRouter;
     @Resource
     private TransactionTemplate transactionTemplate;
@@ -47,10 +51,10 @@ public class AwardRepository implements IAwardRepository {
         Integer awardId = userAwardRecordEntity.getAwardId();
 
         UserAwardRecord userAwardRecord = new UserAwardRecord();
-        userAwardRecord.setUserId(userId);
-        userAwardRecord.setActivityId(activityId);
+        userAwardRecord.setUserId(userAwardRecordEntity.getUserId());
+        userAwardRecord.setActivityId(userAwardRecordEntity.getActivityId());
         userAwardRecord.setStrategyId(userAwardRecordEntity.getStrategyId());
-        userAwardRecord.setAwardId(awardId);
+        userAwardRecord.setAwardId(userAwardRecordEntity.getAwardId());
         userAwardRecord.setOrderId(userAwardRecordEntity.getOrderId());
         userAwardRecord.setAwardTitle(userAwardRecordEntity.getAwardTitle());
         userAwardRecord.setAwardTime(userAwardRecordEntity.getAwardTime());
@@ -63,6 +67,11 @@ public class AwardRepository implements IAwardRepository {
         task.setMessage(JSON.toJSONString(taskEntity.getMessage()));
         task.setState(taskEntity.getState().getCode());
 
+
+        UserRaffleOrder userRaffleOrderReq = new UserRaffleOrder();
+        userRaffleOrderReq.setUserId(userAwardRecordEntity.getUserId());
+        userRaffleOrderReq.setOrderId(userAwardRecordEntity.getOrderId());
+
         try{
             dbRouter.doRouter(userId);
             transactionTemplate.execute(status -> {
@@ -71,10 +80,17 @@ public class AwardRepository implements IAwardRepository {
                     userAwardRecordDao.insert(userAwardRecord);
 //                    写入任务
                     taskDao.insert(task);
+//                    更新抽奖订单
+                    int count = userRaffleOrderDao.updateRaffleOrderStateUsed(userRaffleOrderReq);
+                    if (count!=1){
+                        status.setRollbackOnly();
+                        log.error("写入中奖记录,用户抽奖单已被使用 userId:{} awardId:{} activityId:{}", userId, awardId, activityId);
+                        throw new AppException(ResponseCode.ACTIVITY_ORDER_ERROR);
+                    }
                     return 1;
                 }catch (DuplicateKeyException e){
                     status.setRollbackOnly();
-                    log.error("写入中奖记录,唯一索引冲突 userId:{} awardId:{} activityId:{}", userId, awardId, activityId);
+                    log.error("写入中奖记录,唯一索引冲突 userId:{} awardId:{} activityId:{}", userId, awardId, activityId,e);
                     throw new AppException(ResponseCode.INDEX_DUP);
                 }
             });

@@ -59,6 +59,12 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
         return true;
     }
 
+    @Override
+    public boolean assembleLotteryStrategyByActivityId(Long activityId) {
+        long strategyId = repository.queryStrategyIdByActivityId(activityId);
+        return assembleLotteryStrategy((int) strategyId);
+    }
+
     private void cacheStrategyAwardCount(Integer awardId, Integer strategyId, Integer awardCount) {
         String cacheKey = Constants.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
         repository.cacheStrategyAwardCount(cacheKey,awardCount);

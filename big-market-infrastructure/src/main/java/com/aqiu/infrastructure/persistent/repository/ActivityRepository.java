@@ -24,8 +24,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 @Repository
 @Slf4j
@@ -411,5 +414,17 @@ public class ActivityRepository implements IActivityRepository {
                 .dayCount(raffleActivityAccountDay.getDayCount())
                 .dayCountSurplus(raffleActivityAccountDay.getDayCountSurplus())
                 .build();
+    }
+
+    @Override
+    public List<ActivitySkuEntity> queryActivitySkuListByActivityId(Long activityId) {
+        List<RaffleActivitySku> raffleActivitySkus = raffleActivitySkuDao.queryActivitySkuListByActivityId(activityId);
+        return raffleActivitySkus.stream().map(k -> ActivitySkuEntity.builder()
+                .sku(k.getSku())
+                .activityId(activityId)
+                .activityCountId(k.getActivityCountId())
+                .stockCount(k.getStockCount())
+                .stockCountSurplus(k.getStockCountSurplus())
+                .build()).collect(Collectors.toList());
     }
 }

@@ -5,4 +5,6 @@ package com.aqiu.domain.activity.service.armory;
  */
 public interface IActivityArmory {
     boolean assembleActivitySku(Long sku);
+
+    boolean assembleSkuByActivityId(Long activityId);
 }

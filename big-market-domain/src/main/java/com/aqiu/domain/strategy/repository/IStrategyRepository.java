@@ -46,4 +46,8 @@ public interface IStrategyRepository {
     void updateStrategyAwardStock(Integer strategyId, Integer awardId);
 
     StrategyAwardEntity queryStrategyAwardEntity(Integer strategyId, Integer awardId);
+
+    long queryStrategyIdByActivityId(Long activityId);
+
+    Integer queryTodayUserRaffleCount(String userId, Integer strategyId);
 }
