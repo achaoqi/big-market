@@ -35,6 +35,7 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartakeS
         userRaffleOrderEntity.setOrderTime(currentDate);
         userRaffleOrderEntity.setStrategyId(activity.getStrategyId());
         userRaffleOrderEntity.setOrderId(RandomStringUtils.randomNumeric(12));
+        userRaffleOrderEntity.setEndDateTime(activity.getEndDateTime());
         return userRaffleOrderEntity;
     }
 

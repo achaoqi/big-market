@@ -12,6 +12,8 @@ import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Date;
+
 /**
  * 抽奖策略抽象类
  */
@@ -48,7 +50,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy{
             return buildRaffleAwardEntity(strategyId,chainStrategyAwardVO.getAwardId(),null);
         }
 //抽奖规则数过滤结果，根据抽奖次数判断，库存判断，返回最终结果
-        DefaultTreeFactory.StrategyAwardVO treeStrategyAwardVO = raffleLogicTree(userId, strategyId, chainStrategyAwardVO.getAwardId());
+        DefaultTreeFactory.StrategyAwardVO treeStrategyAwardVO = raffleLogicTree(userId, strategyId, chainStrategyAwardVO.getAwardId(), raffleFactorEntity.getEndDateTime());
         log.info("抽奖策略计算-规则树{} {} {} {}",userId,strategyId,treeStrategyAwardVO.getAwardId(),treeStrategyAwardVO.getAwardRuleValue());
 
         return buildRaffleAwardEntity(strategyId,treeStrategyAwardVO.getAwardId(),treeStrategyAwardVO.getAwardRuleValue());
@@ -67,4 +69,14 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy{
     public abstract DefaultChainFactory.StrategyAwardVO raffleLogicChain(String userId,Integer strategyId);
 
     public abstract DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId,Integer strategyId,Integer awardId);
+
+    /**
+     * 抽奖结果过滤，决策树过滤
+     * @param userId
+     * @param strategyId
+     * @param awardId
+     * @param endDateTime 结束时间
+     * @return
+     */
+    public abstract DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Integer strategyId, Integer awardId, Date endDateTime);
 }

@@ -9,6 +9,7 @@ import com.aqiu.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import com.aqiu.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
     }
 
     @Override
-    public DefaultTreeFactory.StrategyAwardVO process(String userId, Integer strategyId, Integer awardId) {
+    public DefaultTreeFactory.StrategyAwardVO process(String userId, Integer strategyId, Integer awardId,Date endDateTime) {
         DefaultTreeFactory.StrategyAwardVO strategyAwardData=null;
         String nextNode= ruleTreeVO.getTreeRootRuleNode();
         Map<String, RuleTreeNodeVO> treeNodeMap = ruleTreeVO.getTreeNodeMap();
@@ -35,7 +36,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
         while (nextNode!=null){
             ILogicTreeNode iLogicTreeNode = logicTreeNodeGroup.get(nextNode);
             String ruleValue = ruleTreeNode.getRuleValue();
-            DefaultTreeFactory.TreeActionEntity logicEntity = iLogicTreeNode.logic(userId, awardId, strategyId,ruleValue);
+            DefaultTreeFactory.TreeActionEntity logicEntity = iLogicTreeNode.logic(userId, awardId, strategyId,ruleValue,endDateTime);
             RuleLogicCheckTypeVO ruleLogicCheckTypeVO = logicEntity.getRuleLogicCheckTypeVO();
             strategyAwardData = logicEntity.getStrategyAwardVO();
             log.info("决策树引擎 【{}】 treeId:{},node:{},code:{}",ruleTreeVO.getTreeName(),ruleTreeVO.getTreeId(),nextNode,ruleLogicCheckTypeVO.getCode());

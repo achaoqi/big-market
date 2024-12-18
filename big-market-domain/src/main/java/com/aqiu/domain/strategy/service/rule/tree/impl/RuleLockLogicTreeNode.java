@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * 次数锁节点
@@ -20,7 +21,7 @@ public class RuleLockLogicTreeNode implements ILogicTreeNode {
     private IStrategyRepository strategyRepository;
 
     @Override
-    public DefaultTreeFactory.TreeActionEntity logic(String userId, Integer awardId, Integer strategyId,String ruleValue) {
+    public DefaultTreeFactory.TreeActionEntity logic(String userId, Integer awardId, Integer strategyId, String ruleValue, Date endDateTime) {
         log.info("规则过滤-次数锁 userId:{} awardId:{} strategyId:{} ruleValue:{}", userId, awardId, strategyId, ruleValue);
         Integer raffleCount=0;
         try{

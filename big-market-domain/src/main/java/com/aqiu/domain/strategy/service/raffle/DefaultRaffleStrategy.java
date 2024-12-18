@@ -19,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +40,11 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
 
     @Override
     public DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Integer strategyId, Integer awardId) {
+        return raffleLogicTree(userId, strategyId, awardId, null);
+    }
+
+    @Override
+    public DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Integer strategyId, Integer awardId, Date endDateTime) {
         StrategyAwardRuleModelVO strategyAwardRuleModelVO = repository.queryStrategyAwardRuleModel(strategyId, awardId);
         if (strategyAwardRuleModelVO==null|| StringUtils.isBlank(strategyAwardRuleModelVO.getRuleModels())){
             return DefaultTreeFactory.StrategyAwardVO.builder()
@@ -50,7 +56,7 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
             throw new RuntimeException("存在抽奖策略配置的规则模型key未在库表rule_tree,rule_tree_node,rule_tree_line 配置正确");
         }
         IDecisionTreeEngine iDecisionTreeEngine = treeFactory.openLogicTree(ruleTreeVO);
-        return iDecisionTreeEngine.process(userId, strategyId, awardId);
+        return iDecisionTreeEngine.process(userId, strategyId, awardId, endDateTime);
     }
 
     @Override
