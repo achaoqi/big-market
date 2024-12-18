@@ -29,4 +29,11 @@ public interface IRaffleActivitySkuStockService {
      * @param sku
      */
     void clearActivitySkuStock(Long sku);
+
+    /**
+     * 获取活动sku库存
+     * @param sku
+     * @return
+     */
+    Integer queryActivitySkuStock(Long sku);
 }

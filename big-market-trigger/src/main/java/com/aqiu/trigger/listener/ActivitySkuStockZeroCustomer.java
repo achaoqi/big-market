@@ -33,7 +33,6 @@ public class ActivitySkuStockZeroCustomer {
             }.getType());
             Long sku = eventMessage.getData();
             skuStock.clearActivitySkuStock(sku);
-            skuStock.clearQueueValue();
         }catch (Exception e){
             log.error("监听活动sku库存消耗为0消息，消费失败，topic:{} message:{}",topic,message);
             throw e;

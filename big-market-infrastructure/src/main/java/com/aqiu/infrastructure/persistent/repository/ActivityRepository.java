@@ -438,4 +438,10 @@ public class ActivityRepository implements IActivityRepository {
         if (raffleActivityAccountDay==null) return 0;
         return raffleActivityAccountDay.getDayCount()-raffleActivityAccountDay.getDayCountSurplus();
     }
+
+    @Override
+    public Integer queryActivitySkuStock(Long sku) {
+        String cacheKey = Constants.ACTIVITY_SKU_STOCK_COUNT_KEY + sku;
+        return redisService.<Integer>getValue(cacheKey);
+    }
 }
