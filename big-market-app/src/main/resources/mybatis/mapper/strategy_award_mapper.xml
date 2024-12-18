@@ -46,7 +46,7 @@
     <select id="queryStrategyAwardListByStrategyId"
             parameterType="integer"
             resultMap="dataMap">
-        select strategy_id,award_id,award_title,award_count_surplus,award_count,award_count_surplus,award_rate,sort
+        select strategy_id,award_id,award_title,award_count_surplus,award_count,award_count_surplus,award_rate,sort,rule_models
         from strategy_award
         where strategy_id=#{strategyId}
     </select>

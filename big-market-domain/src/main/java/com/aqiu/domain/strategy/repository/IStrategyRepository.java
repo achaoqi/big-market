@@ -9,6 +9,7 @@ import com.aqiu.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public interface IStrategyRepository {
     List<StrategyAwardEntity> queryStrategyAwardList(Integer strategyId);
@@ -50,4 +51,6 @@ public interface IStrategyRepository {
     long queryStrategyIdByActivityId(Long activityId);
 
     Integer queryTodayUserRaffleCount(String userId, Integer strategyId);
+
+    Map<String, Integer> queryAwardRuleLockCount(String[] treeIds);
 }

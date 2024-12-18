@@ -63,6 +63,7 @@ public class StrategyRepository implements IStrategyRepository {
                 .awardCountSurplus(obj.getAwardCountSurplus())
                 .awardRate(obj.getAwardRate())
                 .sort(obj.getSort())
+                .ruleModels(obj.getRuleModels())
                 .build()).collect(Collectors.toList());
         redisService.setValue(cacheKey,entities);
         return entities;
@@ -293,5 +294,16 @@ public class StrategyRepository implements IStrategyRepository {
         RaffleActivityAccountDay raffleActivityAccountDay = raffleActivityAccountDayDao.queryActivityAccountDayByUserId(raffleActivityAccountDayReq);
         if (raffleActivityAccountDay==null) return 0;
         return raffleActivityAccountDay.getDayCount()-raffleActivityAccountDay.getDayCountSurplus();
+    }
+
+    @Override
+    public Map<String, Integer> queryAwardRuleLockCount(String[] treeIds) {
+        if (treeIds==null || treeIds.length==0) return Collections.emptyMap();
+        Map<String, Integer> result=new HashMap<>();
+        List<RuleTreeNode> ruleTreeNodes = ruleTreeNodeDao.queryRuleLocks(treeIds);
+        for (RuleTreeNode ruleTreeNode : ruleTreeNodes) {
+            result.put(ruleTreeNode.getTreeId(), Integer.valueOf(ruleTreeNode.getRuleValue()));
+        }
+        return result;
     }
 }

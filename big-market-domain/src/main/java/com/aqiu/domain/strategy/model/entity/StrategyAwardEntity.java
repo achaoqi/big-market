@@ -44,4 +44,8 @@ public class StrategyAwardEntity {
      * 排序
      */
     private Integer sort;
+    /**
+     * 奖品规则模型
+     */
+    private String ruleModels;
 }

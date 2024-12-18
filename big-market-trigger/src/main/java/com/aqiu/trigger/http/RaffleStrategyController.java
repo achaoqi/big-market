@@ -1,10 +1,12 @@
 package com.aqiu.trigger.http;
 
 import com.alibaba.fastjson.JSON;
+import com.aqiu.domain.activity.service.IRaffleActivityAccountQuotaService;
 import com.aqiu.domain.strategy.model.entity.RaffleAwardEntity;
 import com.aqiu.domain.strategy.model.entity.RaffleFactorEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
 import com.aqiu.domain.strategy.service.IRaffleAward;
+import com.aqiu.domain.strategy.service.IRaffleRule;
 import com.aqiu.domain.strategy.service.IRaffleStrategy;
 import com.aqiu.domain.strategy.service.armory.IStrategyArmory;
 import com.aqiu.trigger.api.IRaffleStrategyService;
@@ -15,10 +17,12 @@ import com.aqiu.trigger.api.dto.RaffleStrategyResponseDTO;
 import com.aqiu.types.enums.ResponseCode;
 import com.aqiu.types.model.Response;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -35,6 +39,12 @@ public class RaffleStrategyController implements IRaffleStrategyService {
 
     @Resource
     private IRaffleStrategy raffleStrategy;
+
+    @Resource
+    private IRaffleRule raffleRule;
+
+    @Resource
+    private IRaffleActivityAccountQuotaService raffleActivityAccountQuotaService;
 
     /**
      * 策略装配，将策略信息装配到缓存中
@@ -73,15 +83,33 @@ public class RaffleStrategyController implements IRaffleStrategyService {
     @RequestMapping(value = "query_raffle_award_list", method = RequestMethod.POST)
     @Override
     public Response<List<RaffleAwardListResponseDTO>> queryRaffleAwardList(@RequestBody RaffleAwardListRequestDTO requestDTO) {
-        log.info("查询奖品列表开始 strategyId:{}", requestDTO.getStrategyId());
-        List<StrategyAwardEntity> strategyAwardEntities = raffleAward.queryRaffleStrategyAwardList(requestDTO.getStrategyId());
-        log.info("查询奖品列表 strategyId:{} strategyAwardEntities:{}", requestDTO.getStrategyId(), strategyAwardEntities);
+        log.info("查询奖品列表开始 userId:{},activityId:{}", requestDTO.getUserId(),requestDTO.getActivityId());
+//        参数校验
+        if (StringUtils.isBlank(requestDTO.getUserId())||null==requestDTO.getActivityId()){
+            return Response.<List<RaffleAwardListResponseDTO>>builder()
+                    .code(ResponseCode.ILLEGAL_PARAMETER.getCode())
+                    .info(ResponseCode.ILLEGAL_PARAMETER.getInfo())
+                    .build();
+        }
+//        查询奖品列表
+        List<StrategyAwardEntity> strategyAwardEntities = raffleAward.queryRaffleStrategyAwardListByActivityId(requestDTO.getActivityId());
+        log.info("查询奖品列表 activityId:{} strategyAwardEntities:{}", requestDTO.getActivityId(), strategyAwardEntities);
+        String[] treeIds = strategyAwardEntities.stream().map(StrategyAwardEntity::getRuleModels).filter(StringUtils::isNotBlank).toArray(String[]::new);
+//查询规则配置
+        Map<String, Integer> ruleLockCountMap = raffleRule.queryAwardRuleLockCount(treeIds);
+//        查询用户抽奖次数
+        Integer userRaffleCount = raffleActivityAccountQuotaService.queryRaffleActivityAccountDayPartakeCount(requestDTO.getUserId(), requestDTO.getActivityId());
+//        数据填充
         List<RaffleAwardListResponseDTO> response = strategyAwardEntities.stream().map(obj -> RaffleAwardListResponseDTO.builder()
                 .awardId(obj.getAwardId())
                 .awardTitle(obj.getAwardTitle())
                 .awardSubtitle(obj.getAwardSubtitle())
                 .sort(obj.getSort())
+                .awardRuleLockCount(ruleLockCountMap.getOrDefault(obj.getRuleModels(),0))
+                .isAwardUnLock(ruleLockCountMap.getOrDefault(obj.getRuleModels(),0) <= userRaffleCount)
+                .waitUnLockCount(Math.max(0,ruleLockCountMap.getOrDefault(obj.getRuleModels(),0) - userRaffleCount))
                 .build()).collect(Collectors.toList());
+        log.info("查询奖品列表完成 userId:{} activityId:{} response:{})", requestDTO.getUserId(), requestDTO.getActivityId(), JSON.toJSONString(response));
         return Response.<List<RaffleAwardListResponseDTO>>builder()
                 .code(ResponseCode.SUCCESS.getCode())
                 .info(ResponseCode.SUCCESS.getInfo())

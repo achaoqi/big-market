@@ -427,4 +427,15 @@ public class ActivityRepository implements IActivityRepository {
                 .stockCountSurplus(k.getStockCountSurplus())
                 .build()).collect(Collectors.toList());
     }
+
+    @Override
+    public Integer queryRaffleActivityAccountDayPartakeCount(String userId, Integer activityId) {
+        RaffleActivityAccountDay raffleActivityAccountDay = new RaffleActivityAccountDay();
+        raffleActivityAccountDay.setDay(raffleActivityAccountDay.currentDay());
+        raffleActivityAccountDay.setUserId(userId);
+        raffleActivityAccountDay.setActivityId(Long.valueOf(activityId));
+        raffleActivityAccountDay = raffleActivityAccountDayDao.queryActivityAccountDayByUserId(raffleActivityAccountDay);
+        if (raffleActivityAccountDay==null) return 0;
+        return raffleActivityAccountDay.getDayCount()-raffleActivityAccountDay.getDayCountSurplus();
+    }
 }

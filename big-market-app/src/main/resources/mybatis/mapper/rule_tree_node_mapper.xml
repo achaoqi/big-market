@@ -18,4 +18,14 @@
         where tree_id = #{treeId}
     </select>
 
+    <select id="queryRuleLocks" resultMap="dataMap">
+        select tree_id, rule_value
+        from rule_tree_node
+        where tree_id in
+        <foreach collection="treeIds" item="treeId" open="(" separator="," close=")">
+            #{treeId}
+        </foreach>
+        and rule_key = 'rule_lock'
+    </select>
+
 </mapper>
