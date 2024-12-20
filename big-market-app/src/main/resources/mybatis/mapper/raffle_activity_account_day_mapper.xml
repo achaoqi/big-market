@@ -20,6 +20,13 @@
             (#{userId}, #{activityId}, #{day}, #{dayCount}, #{dayCountSurplus}, now(), now())
     </insert>
 
+    <insert id="addAccountQuota">
+        update raffle_activity_account_day set
+        day_count = day_count + #{dayCount} , day_count_surplus = day_count_surplus + #{dayCountSurplus},
+        update_time = now()
+        where activity_id = #{activityId} and user_id =#{userId} and day = #{day}
+    </insert>
+
     <update id="updateActivityAccountDaySubtractionQuota" parameterType="com.aqiu.infrastructure.persistent.po.RaffleActivityAccountDay">
         update raffle_activity_account_day
         set day_count_surplus = day_count_surplus - 1, update_time = now()

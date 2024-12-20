@@ -1,5 +1,6 @@
 package com.aqiu.trigger.http;
 
+import com.alibaba.fastjson.JSON;
 import com.aqiu.domain.activity.model.entity.PartakeRaffleActivityEntity;
 import com.aqiu.domain.activity.model.entity.UserRaffleOrderEntity;
 import com.aqiu.domain.activity.service.IRaffleActivityPartakeService;
@@ -7,6 +8,9 @@ import com.aqiu.domain.activity.service.armory.IActivityArmory;
 import com.aqiu.domain.award.model.entity.UserAwardRecordEntity;
 import com.aqiu.domain.award.model.valobj.AwardStateVO;
 import com.aqiu.domain.award.service.IAwardService;
+import com.aqiu.domain.rebate.model.entity.BehaviorEntity;
+import com.aqiu.domain.rebate.model.valobj.BehaviorTypeVO;
+import com.aqiu.domain.rebate.service.IBehaviorRebateService;
 import com.aqiu.domain.strategy.model.entity.RaffleAwardEntity;
 import com.aqiu.domain.strategy.model.entity.RaffleFactorEntity;
 import com.aqiu.domain.strategy.service.IRaffleStrategy;
@@ -22,7 +26,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 抽奖活动服务
@@ -42,6 +48,9 @@ public class RaffleActivityController implements IRaffleActivityService {
     private IRaffleStrategy raffleStrategy;
     @Resource
     private IAwardService awardService;
+    @Resource
+    private IBehaviorRebateService behaviorRebateService;
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 
     /**
      * 活动装配-数据预热 | 把活动配置的对应sku一起装配
@@ -121,6 +130,44 @@ public class RaffleActivityController implements IRaffleActivityService {
             return Response.<ActivityDrawResponseDTO>builder()
                     .code(ResponseCode.UN_ERROR.getCode())
                     .info(ResponseCode.UN_ERROR.getInfo())
+                    .build();
+        }
+    }
+
+    /**
+     * 日历签到返利接口
+     * @param userId
+     * @return
+     */
+    @RequestMapping(value = "/calendar_sign_rebate",method = RequestMethod.POST)
+    @Override
+    public Response<Boolean> calendarSignRebate(String userId) {
+        try{
+            log.info("日历签到返利开始:userId:{}",userId);
+            BehaviorEntity behaviorEntity = new BehaviorEntity();
+            behaviorEntity.setUserId(userId);
+            behaviorEntity.setBehaviorTypeVO(BehaviorTypeVO.SING);
+            behaviorEntity.setOutBusinessId(dateFormat.format(new Date()));
+            List<String> orderIds = behaviorRebateService.createOrder(behaviorEntity);
+            log.info("日历签到返利完成:orderIds:{}", JSON.toJSONString(orderIds));
+            return Response.<Boolean>builder()
+                    .code(ResponseCode.SUCCESS.getCode())
+                    .info(ResponseCode.SUCCESS.getInfo())
+                    .data(true)
+                    .build();
+        }catch (AppException e){
+            log.error("日历签到返利失败 userId:{}", userId, e);
+            return Response.<Boolean>builder()
+                    .code(e.getCode())
+                    .info(e.getInfo())
+                    .data(false)
+                    .build();
+        }catch (Exception e){
+            log.error("日历签到返利失败 userId:{}", userId, e);
+            return Response.<Boolean>builder()
+                    .code(ResponseCode.UN_ERROR.getCode())
+                    .info(ResponseCode.UN_ERROR.getInfo())
+                    .data(false)
                     .build();
         }
     }

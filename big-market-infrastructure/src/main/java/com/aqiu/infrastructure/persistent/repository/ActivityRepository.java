@@ -132,7 +132,7 @@ public class ActivityRepository implements IActivityRepository {
         raffleActivityOrder.setState(activityOrderEntity.getState().getCode());
         raffleActivityOrder.setOutBusinessNo(activityOrderEntity.getOutBusinessNo());
 
-        // 账户对象
+        // 账户对象 - 总
         RaffleActivityAccount raffleActivityAccount = new RaffleActivityAccount();
         raffleActivityAccount.setUserId(createQuotaOrderAggregate.getUserId());
         raffleActivityAccount.setActivityId(createQuotaOrderAggregate.getActivityId());
@@ -143,6 +143,22 @@ public class ActivityRepository implements IActivityRepository {
         raffleActivityAccount.setMonthCount(createQuotaOrderAggregate.getMonthCount());
         raffleActivityAccount.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
 
+        // 账户对象 - 月
+        RaffleActivityAccountMonth raffleActivityAccountMonth = new RaffleActivityAccountMonth();
+        raffleActivityAccountMonth.setActivityId(createQuotaOrderAggregate.getActivityId());
+        raffleActivityAccountMonth.setUserId(createQuotaOrderAggregate.getUserId());
+        raffleActivityAccountMonth.setMonth(raffleActivityAccountMonth.currentMonth());
+        raffleActivityAccountMonth.setMonthCount(createQuotaOrderAggregate.getMonthCount());
+        raffleActivityAccountMonth.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
+
+
+        // 账户对象 - 日
+        RaffleActivityAccountDay raffleActivityAccountDay = new RaffleActivityAccountDay();
+        raffleActivityAccountDay.setActivityId(createQuotaOrderAggregate.getActivityId());
+        raffleActivityAccountDay.setUserId(createQuotaOrderAggregate.getUserId());
+        raffleActivityAccountDay.setDay(raffleActivityAccountDay.currentDay());
+        raffleActivityAccountDay.setDayCount(createQuotaOrderAggregate.getDayCount());
+        raffleActivityAccountDay.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
 
         try{
 //            以用户ID为切分建，设定路由【保证下面操作都是在一个连接下】
@@ -157,6 +173,10 @@ public class ActivityRepository implements IActivityRepository {
 //                        创建账户
                         raffleActivityAccountDao.insert(raffleActivityAccount);
                     }
+//                    更新账户-月
+                    raffleActivityAccountMonthDao.addAccountQuota(raffleActivityAccountMonth);
+//                    更新账户-日
+                    raffleActivityAccountDayDao.addAccountQuota(raffleActivityAccountDay);
                     return 1;
                 }catch (DuplicateKeyException e){
                     status.setRollbackOnly();

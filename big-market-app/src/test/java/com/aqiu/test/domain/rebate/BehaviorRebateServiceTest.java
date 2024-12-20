@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -22,14 +23,17 @@ public class BehaviorRebateServiceTest {
     private BehaviorRebateService behaviorRebateService;
 
     @Test
-    public void test_createOrder(){
+    public void test_createOrder() throws InterruptedException {
         BehaviorEntity behaviorEntity = new BehaviorEntity();
         behaviorEntity.setUserId("xiaofuge");
         behaviorEntity.setBehaviorTypeVO(BehaviorTypeVO.SING);
-        behaviorEntity.setOutBusinessId("20241218");
+        behaviorEntity.setOutBusinessId("20241220");
         List<String> orderIds = behaviorRebateService.createOrder(behaviorEntity);
         log.info("请求参数:{}", JSON.toJSONString(behaviorEntity));
         log.info("返回结果:{}", JSON.toJSONString(orderIds));
+
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+        countDownLatch.await();
     }
 
 }

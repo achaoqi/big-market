@@ -22,6 +22,13 @@
                    #{userId}, #{activityId}, #{month}, #{monthCount}, #{monthCountSurplus}, now(), now())
     </insert>
 
+    <insert id="addAccountQuota">
+        update raffle_activity_account_month set
+        month_count = month_count + #{monthCount} , month_count_surplus = month_count_surplus + #{monthCountSurplus},
+        update_time = now()
+        where activity_id = #{activityId} and user_id =#{userId} and month = #{month}
+    </insert>
+
     <select id="queryActivityAccountMonthByUserId" parameterType="com.aqiu.infrastructure.persistent.po.RaffleActivityAccountMonth" resultMap="dataMap">
         select user_id, activity_id, month, month_count, month_count_surplus
         from raffle_activity_account_month
