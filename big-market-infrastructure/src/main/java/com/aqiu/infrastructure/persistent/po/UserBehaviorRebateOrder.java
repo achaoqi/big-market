@@ -25,6 +25,8 @@ public class UserBehaviorRebateOrder {
     private String rebateConfig;
 //    业务ID -拼接的唯一值
     private String bizId;
+//    业务仿重ID
+    private String outBusinessNo;
     private Date createTime;
     private Date updateTime;
 }

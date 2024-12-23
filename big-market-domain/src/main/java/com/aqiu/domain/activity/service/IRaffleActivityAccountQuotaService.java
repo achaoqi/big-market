@@ -1,5 +1,6 @@
 package com.aqiu.domain.activity.service;
 
+import com.aqiu.domain.activity.model.entity.ActivityAccountEntity;
 import com.aqiu.domain.activity.model.entity.SkuRechargeEntity;
 
 /**
@@ -20,4 +21,14 @@ public interface IRaffleActivityAccountQuotaService {
      * @return
      */
     Integer queryRaffleActivityAccountDayPartakeCount(String userId, Integer activityId);
+
+    /**
+     * 查询用户账户抽奖额度信息
+     * @param userId
+     * @param activityId
+     * @return
+     */
+    ActivityAccountEntity queryRaffleActivityAccount(String userId, Long activityId);
+
+    Integer queryRaffleActivityAccountPartakeCount(String userId, Long activityId);
 }

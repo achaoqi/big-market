@@ -23,6 +23,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.stream.Collectors;
@@ -80,6 +81,7 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
                         userBehaviorRebateOrder.setRebateDesc(behaviorRebateOrderEntity.getRebateDesc());
                         userBehaviorRebateOrder.setRebateType(behaviorRebateOrderEntity.getRebateType());
                         userBehaviorRebateOrder.setUserId(behaviorRebateOrderEntity.getUserId());
+                        userBehaviorRebateOrder.setOutBusinessNo(behaviorRebateOrderEntity.getOutBusinessNo());
                         userBehaviorRebateOrderDao.insert(userBehaviorRebateOrder);
 
 //                        任务对象
@@ -119,5 +121,24 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
                 }
             });
         }
+    }
+
+    @Override
+    public List<BehaviorRebateOrderEntity> queryOrderByOutBusinessNo(String userId, String outBusinessNo) {
+        UserBehaviorRebateOrder userBehaviorRebateOrder = new UserBehaviorRebateOrder();
+        userBehaviorRebateOrder.setUserId(userId);
+        userBehaviorRebateOrder.setOutBusinessNo(outBusinessNo);
+        List<UserBehaviorRebateOrder> userBehaviorRebateOrders = userBehaviorRebateOrderDao.queryOrderByOutBusinessNo(userBehaviorRebateOrder);
+
+        return userBehaviorRebateOrders.stream().map((data) -> BehaviorRebateOrderEntity.builder()
+                .outBusinessNo(outBusinessNo)
+                .userId(userId)
+                .orderId(data.getOrderId())
+                .bizId(data.getBizId())
+                .rebateType(data.getRebateType())
+                .rebateConfig(data.getRebateConfig())
+                .behaviorType(data.getBehaviorType())
+                .rebateDesc(data.getRebateDesc())
+                .build()).collect(Collectors.toList());
     }
 }

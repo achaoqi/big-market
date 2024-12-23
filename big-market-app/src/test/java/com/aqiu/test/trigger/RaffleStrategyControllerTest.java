@@ -3,6 +3,8 @@ package com.aqiu.test.trigger;
 import com.aqiu.trigger.api.IRaffleStrategyService;
 import com.aqiu.trigger.api.dto.RaffleAwardListRequestDTO;
 import com.aqiu.trigger.api.dto.RaffleAwardListResponseDTO;
+import com.aqiu.trigger.api.dto.RaffleStrategyRuleWeightRequestDTO;
+import com.aqiu.trigger.api.dto.RaffleStrategyRuleWeightResponseDTO;
 import com.aqiu.types.model.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -27,6 +29,16 @@ public class RaffleStrategyControllerTest {
         dto.setUserId("xiaofuge");
         dto.setActivityId(100301);
         Response<List<RaffleAwardListResponseDTO>> response = raffleStrategyService.queryRaffleAwardList(dto);
+        log.info("请求参数:{}", dto);
+        log.info("返回结果:{}", response);
+    }
+
+    @Test
+    public void test_queryRaffleStrategyRuleWeight(){
+        RaffleStrategyRuleWeightRequestDTO dto = new RaffleStrategyRuleWeightRequestDTO();
+        dto.setUserId("xiaofuge");
+        dto.setActivityId(100301L);
+        Response<List<RaffleStrategyRuleWeightResponseDTO>> response = raffleStrategyService.queryRaffleStrategyRuleWeight(dto);
         log.info("请求参数:{}", dto);
         log.info("返回结果:{}", response);
     }

@@ -1,9 +1,6 @@
 package com.aqiu.trigger.api;
 
-import com.aqiu.trigger.api.dto.RaffleAwardListRequestDTO;
-import com.aqiu.trigger.api.dto.RaffleAwardListResponseDTO;
-import com.aqiu.trigger.api.dto.RaffleStrategyRequestDTO;
-import com.aqiu.trigger.api.dto.RaffleStrategyResponseDTO;
+import com.aqiu.trigger.api.dto.*;
 import com.aqiu.types.model.Response;
 
 import java.util.List;
@@ -32,4 +29,11 @@ public interface IRaffleStrategyService {
      * @return
      */
     Response<RaffleStrategyResponseDTO> randomRaffle(RaffleStrategyRequestDTO requestDTO);
+
+    /**
+     * 查询特殊权重奖品信息
+     * @param requestDTO
+     * @return
+     */
+    Response<List<RaffleStrategyRuleWeightResponseDTO>> queryRaffleStrategyRuleWeight(RaffleStrategyRuleWeightRequestDTO requestDTO);
 }

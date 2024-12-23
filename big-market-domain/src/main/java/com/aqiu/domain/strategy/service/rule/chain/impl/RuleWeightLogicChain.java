@@ -27,8 +27,6 @@ public class RuleWeightLogicChain extends AbstractLogicChain {
     @Resource
     private IStrategyDispatch strategyDispatch;
 
-    private Integer userScore=0;
-
     @Override
     public DefaultChainFactory.StrategyAwardVO logic(String userId, Integer strategyId) {
         log.info("规则过滤-权重过滤 userId:{},strategyId:{},ruleModel:{}", userId, strategyId,ruleModel());
@@ -40,6 +38,8 @@ public class RuleWeightLogicChain extends AbstractLogicChain {
         if (CollectionUtils.isEmpty(fraction)){
             return next().logic(userId, strategyId);
         }
+
+        Integer userScore = repository.queryActivityAccountTotalUseCount(userId,strategyId);
 
         for (int i = fraction.size()-1; i >= 0; i--) {
             int ruleWeightValueKey = Integer.parseInt(fraction.get(i));

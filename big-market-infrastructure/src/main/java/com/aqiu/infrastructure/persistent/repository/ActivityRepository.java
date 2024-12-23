@@ -464,4 +464,72 @@ public class ActivityRepository implements IActivityRepository {
         String cacheKey = Constants.ACTIVITY_SKU_STOCK_COUNT_KEY + sku;
         return redisService.<Integer>getValue(cacheKey);
     }
+
+    @Override
+    public ActivityAccountEntity queryRaffleActivityAccount(String userId, Long activityId) {
+        RaffleActivityAccount raffleActivityAccount = new RaffleActivityAccount();
+        raffleActivityAccount.setUserId(userId);
+        raffleActivityAccount.setActivityId(activityId);
+        raffleActivityAccount = raffleActivityAccountDao.queryActivityAccountByUserId(raffleActivityAccount);
+        if (raffleActivityAccount==null){
+            return ActivityAccountEntity.builder()
+                    .userId(userId)
+                    .activityId(activityId)
+                    .totalCount(0)
+                    .totalCountSurplus(0)
+                    .monthCount(0)
+                    .monthCountSurplus(0)
+                    .dayCount(0)
+                    .dayCountSurplus(0)
+                    .build();
+        }
+
+        RaffleActivityAccountMonth activityAccountMonth = RaffleActivityAccountMonth.builder()
+                .userId(userId)
+                .activityId(activityId)
+                .build();
+        activityAccountMonth.setMonth(activityAccountMonth.currentMonth());
+        RaffleActivityAccountMonth raffleActivityAccountMonth = raffleActivityAccountMonthDao.queryActivityAccountMonthByUserId(activityAccountMonth);
+
+        RaffleActivityAccountDay activityAccountDay = RaffleActivityAccountDay.builder()
+                .userId(userId)
+                .activityId(activityId)
+                .build();
+        activityAccountDay.setDay(activityAccountDay.currentDay());
+        RaffleActivityAccountDay raffleActivityAccountDay = raffleActivityAccountDayDao.queryActivityAccountDayByUserId(activityAccountDay);
+
+//        封装对象
+        ActivityAccountEntity activityAccountEntity = new ActivityAccountEntity();
+        activityAccountEntity.setUserId(userId);
+        activityAccountEntity.setActivityId(activityId);
+        activityAccountEntity.setTotalCount(raffleActivityAccount.getTotalCount());
+        activityAccountEntity.setTotalCountSurplus(raffleActivityAccount.getTotalCountSurplus());
+
+        if (raffleActivityAccountMonth==null){
+            activityAccountEntity.setMonthCount(raffleActivityAccount.getMonthCount());
+            activityAccountEntity.setMonthCountSurplus(raffleActivityAccount.getMonthCountSurplus());
+        }else{
+            activityAccountEntity.setMonthCount(raffleActivityAccountMonth.getMonthCount());
+            activityAccountEntity.setMonthCountSurplus(raffleActivityAccountMonth.getMonthCountSurplus());
+        }
+
+        if (raffleActivityAccountDay==null){
+            activityAccountEntity.setDayCount(raffleActivityAccount.getDayCount());
+            activityAccountEntity.setDayCountSurplus(raffleActivityAccount.getDayCountSurplus());
+        }else{
+            activityAccountEntity.setDayCount(raffleActivityAccountDay.getDayCount());
+            activityAccountEntity.setDayCountSurplus(raffleActivityAccountDay.getDayCountSurplus());
+        }
+
+        return activityAccountEntity;
+    }
+
+    @Override
+    public Integer queryRaffleActivityAccountPartakeCount(String userId, Long activityId) {
+        RaffleActivityAccount raffleActivityAccount = raffleActivityAccountDao.queryActivityAccountByUserId(RaffleActivityAccount.builder()
+                .userId(userId)
+                .activityId(activityId)
+                .build());
+        return raffleActivityAccount.getTotalCount()-raffleActivityAccount.getTotalCountSurplus();
+    }
 }

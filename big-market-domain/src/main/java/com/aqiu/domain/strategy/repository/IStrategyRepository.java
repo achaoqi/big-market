@@ -4,6 +4,7 @@ import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyEntity;
 import com.aqiu.domain.strategy.model.entity.StrategyRuleEntity;
 import com.aqiu.domain.strategy.model.valobj.RuleTreeVO;
+import com.aqiu.domain.strategy.model.valobj.RuleWeightVO;
 import com.aqiu.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import com.aqiu.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 
@@ -56,4 +57,8 @@ public interface IStrategyRepository {
     Integer queryTodayUserRaffleCount(String userId, Integer strategyId);
 
     Map<String, Integer> queryAwardRuleLockCount(String[] treeIds);
+
+    Integer queryActivityAccountTotalUseCount(String userId, Integer strategyId);
+
+    List<RuleWeightVO> queryAwardRuleWeight(Long strategyId);
 }

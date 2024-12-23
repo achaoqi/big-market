@@ -2,6 +2,7 @@ package com.aqiu.domain.strategy.service.raffle;
 
 import com.aqiu.domain.strategy.model.entity.StrategyAwardEntity;
 import com.aqiu.domain.strategy.model.valobj.RuleTreeVO;
+import com.aqiu.domain.strategy.model.valobj.RuleWeightVO;
 import com.aqiu.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import com.aqiu.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import com.aqiu.domain.strategy.repository.IStrategyRepository;
@@ -83,5 +84,16 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
     @Override
     public Map<String, Integer> queryAwardRuleLockCount(String[] treeIds) {
         return repository.queryAwardRuleLockCount(treeIds);
+    }
+
+    @Override
+    public List<RuleWeightVO> queryAwardRuleWeight(Long strategyId) {
+        return repository.queryAwardRuleWeight(strategyId);
+    }
+
+    @Override
+    public List<RuleWeightVO> queryAwardRuleWeightByActivityId(Long activityId) {
+        long strategyId = repository.queryStrategyIdByActivityId(activityId);
+        return queryAwardRuleWeight(strategyId);
     }
 }

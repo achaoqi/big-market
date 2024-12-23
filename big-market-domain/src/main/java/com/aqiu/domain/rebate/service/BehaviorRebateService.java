@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -45,6 +46,7 @@ public class BehaviorRebateService implements IBehaviorRebateService {
                     .rebateDesc(dailyBehaviorRebateVO.getRebateDesc())
                     .rebateType(dailyBehaviorRebateVO.getRebateType())
                     .bizId(bizId)
+                    .outBusinessNo(behaviorEntity.getOutBusinessId())
                     .orderId(RandomStringUtils.randomNumeric(12))
                     .userId(behaviorEntity.getUserId())
                     .build();
@@ -79,5 +81,10 @@ public class BehaviorRebateService implements IBehaviorRebateService {
 
 
         return orderIds;
+    }
+
+    @Override
+    public List<BehaviorRebateOrderEntity> queryOrderByOutBusinessNo(String userId, String outBusinessNo) {
+        return behaviorRebateRepository.queryOrderByOutBusinessNo(userId,outBusinessNo);
     }
 }

@@ -2,6 +2,8 @@ package com.aqiu.trigger.api;
 
 import com.aqiu.trigger.api.dto.ActivityDrawRequestDTO;
 import com.aqiu.trigger.api.dto.ActivityDrawResponseDTO;
+import com.aqiu.trigger.api.dto.UserActivityAccountRequestDTO;
+import com.aqiu.trigger.api.dto.UserActivityAccountResponseDTO;
 import com.aqiu.types.model.Response;
 
 /**
@@ -28,4 +30,18 @@ public interface IRaffleActivityService {
      * @return
      */
     Response<Boolean> calendarSignRebate(String userId);
+
+    /**
+     * 判断是否完成日历签到返利
+     * @param userId
+     * @return
+     */
+    Response<Boolean> isCalendarSignRebate(String userId);
+
+    /**
+     * 查询用户活动抽奖次数
+     * @param requestDTO
+     * @return
+     */
+    Response<UserActivityAccountResponseDTO> queryUserActivityAccount(UserActivityAccountRequestDTO requestDTO);
 }
