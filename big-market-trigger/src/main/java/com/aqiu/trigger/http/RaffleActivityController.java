@@ -111,10 +111,11 @@ public class RaffleActivityController implements IRaffleActivityService {
                             .userId(request.getUserId())
                             .orderId(order.getOrderId())
                             .awardId(raffleAwardEntity.getAwardId())
-                            .strategyId(Long.valueOf(raffleAwardEntity.getAwardId()))
+                            .strategyId(order.getStrategyId())
                             .awardState(AwardStateVO.create)
                             .awardTime(new Date())
                             .awardTitle(raffleAwardEntity.getAwardTitle())
+                            .awardConfig(raffleAwardEntity.getAwardConfig())
                     .build());
 //            返回结果
             return Response.<ActivityDrawResponseDTO>builder()

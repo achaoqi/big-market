@@ -35,6 +35,7 @@ public class BlackListLogicChain extends AbstractLogicChain {
                 return DefaultChainFactory.StrategyAwardVO.builder()
                         .logicModel(ruleModel())
                         .awardId(Integer.parseInt(awardId))
+                        .awardRuleValue("0.01,1")
                         .build();
             }
         }

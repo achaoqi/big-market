@@ -42,14 +42,26 @@ public class RaffleActivityControllerTest {
     }
 
     @Test
+    public void test_draw_blacklist() throws InterruptedException {
+        ActivityDrawRequestDTO dto = ActivityDrawRequestDTO.builder()
+                .activityId(100301L)
+                .userId("user003")
+                .build();
+        Response<ActivityDrawResponseDTO> response = raffleActivityService.draw(dto);
+        log.info("请求参数:{}", JSON.toJSONString(dto));
+        log.info("返回结果:{}", JSON.toJSONString(response));
+        new CountDownLatch(1).await();
+    }
+
+    @Test
     public void test_calendarSignRebate() {
-        Response<Boolean> response = raffleActivityService.calendarSignRebate("chaoqi");
+        Response<Boolean> response = raffleActivityService.calendarSignRebate("user003");
         log.info("测试结果:{}", JSON.toJSONString(response));
     }
 
     @Test
     public void test_isCalendarSignRebate() {
-        Response<Boolean> response = raffleActivityService.isCalendarSignRebate("xiaofuge");
+        Response<Boolean> response = raffleActivityService.isCalendarSignRebate("user003");
         log.info("测试结果:{}", JSON.toJSONString(response));
     }
 

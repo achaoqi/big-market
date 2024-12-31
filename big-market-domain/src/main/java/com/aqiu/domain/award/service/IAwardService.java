@@ -1,5 +1,6 @@
 package com.aqiu.domain.award.service;
 
+import com.aqiu.domain.award.model.entity.DistributeAwardEntity;
 import com.aqiu.domain.award.model.entity.UserAwardRecordEntity;
 
 /**
@@ -7,4 +8,6 @@ import com.aqiu.domain.award.model.entity.UserAwardRecordEntity;
  */
 public interface IAwardService {
     void saveUserAwardRecord(UserAwardRecordEntity userAwardRecordEntity);
+
+    void distributeAward(DistributeAwardEntity distributeAwardEntity);
 }
