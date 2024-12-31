@@ -25,9 +25,9 @@ public class BehaviorRebateServiceTest {
     @Test
     public void test_createOrder() throws InterruptedException {
         BehaviorEntity behaviorEntity = new BehaviorEntity();
-        behaviorEntity.setUserId("xiaofuge");
+        behaviorEntity.setUserId("chaoqi");
         behaviorEntity.setBehaviorTypeVO(BehaviorTypeVO.SING);
-        behaviorEntity.setOutBusinessId("20241220");
+        behaviorEntity.setOutBusinessId("20241231");
         List<String> orderIds = behaviorRebateService.createOrder(behaviorEntity);
         log.info("请求参数:{}", JSON.toJSONString(behaviorEntity));
         log.info("返回结果:{}", JSON.toJSONString(orderIds));
