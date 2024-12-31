@@ -1,6 +1,5 @@
 package com.aqiu.infrastructure.persistent.repository;
 
-import cn.bugstack.middleware.db.router.annotation.DBRouter;
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import com.alibaba.fastjson.JSON;
 import com.aqiu.domain.award.model.aggregate.GiveOutPrizesAggregate;
@@ -17,15 +16,19 @@ import com.aqiu.infrastructure.persistent.po.Task;
 import com.aqiu.infrastructure.persistent.po.UserAwardRecord;
 import com.aqiu.infrastructure.persistent.po.UserCreditAccount;
 import com.aqiu.infrastructure.persistent.po.UserRaffleOrder;
+import com.aqiu.infrastructure.persistent.redis.IRedisService;
+import com.aqiu.types.common.Constants;
 import com.aqiu.types.enums.ResponseCode;
 import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RLock;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Repository
@@ -48,6 +51,8 @@ public class AwardRepository implements IAwardRepository {
     private EventPublisher eventPublisher;
     @Resource
     private ThreadPoolExecutor executor;
+    @Resource
+    private IRedisService redisService;
 
     @Override
     public void saveUserAwardRecord(UserAwardRecordAggregate userAwardRecordAggregate) {
@@ -141,14 +146,19 @@ public class AwardRepository implements IAwardRepository {
         userCreditAccountReq.setAvailableAmount(userCreditAwardEntity.getCreditAmount());
         userCreditAccountReq.setAccountStatus(AccountStatusVO.open.getCode());
 
+        RLock lock = redisService.getLock(Constants.ACTIVITY_ACCOUNT_LOCK + userId);
         try{
+            lock.lock(3, TimeUnit.SECONDS);
             dbRouter.doRouter(userId);
             transactionTemplate.execute(status -> {
                 try{
-                    int updateAccountAmount = userCreditAccountDao.updateAddAmount(userCreditAccountReq);
-                    if (updateAccountAmount==0){
+                    UserCreditAccount userCreditAccountRes = userCreditAccountDao.queryUserCreditAccount(userCreditAccountReq);
+                    if (null == userCreditAccountRes) {
                         userCreditAccountDao.insert(userCreditAccountReq);
+                    } else {
+                        userCreditAccountDao.updateAddAmount(userCreditAccountReq);
                     }
+
                     int updateAwardCount = userAwardRecordDao.updateAwardRecordCompletedState(userAwardRecordReq);
                     if (updateAwardCount==0){
                         log.warn("更新中奖记录，重复更新拦截 userId:{},giveOutPrizesAggregate:{}",userId,JSON.toJSONString(giveOutPrizesAggregate));
@@ -163,6 +173,7 @@ public class AwardRepository implements IAwardRepository {
             });
         }finally {
             dbRouter.clear();
+            lock.unlock();
         }
     }
 

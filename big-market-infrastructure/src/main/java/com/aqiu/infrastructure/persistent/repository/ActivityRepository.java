@@ -19,6 +19,7 @@ import com.aqiu.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBlockingQueue;
 import org.redisson.api.RDelayedQueue;
+import org.redisson.api.RLock;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -116,6 +117,7 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public void doSaveOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate) {
+        RLock lock = redisService.getLock(Constants.ACTIVITY_ACCOUNT_LOCK + createQuotaOrderAggregate.getUserId() + Constants.UNDERLINE + createQuotaOrderAggregate.getActivityId());
         // 订单对象
         ActivityOrderEntity activityOrderEntity = createQuotaOrderAggregate.getActivityOrderEntity();
         RaffleActivityOrder raffleActivityOrder = new RaffleActivityOrder();
@@ -161,6 +163,7 @@ public class ActivityRepository implements IActivityRepository {
         raffleActivityAccountDay.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
 
         try{
+            lock.lock(3, TimeUnit.SECONDS);
 //            以用户ID为切分建，设定路由【保证下面操作都是在一个连接下】
             dbRouter.doRouter(createQuotaOrderAggregate.getUserId());
             transactionTemplate.execute(status -> {
@@ -168,10 +171,11 @@ public class ActivityRepository implements IActivityRepository {
                     //插入订单
                     raffleActivityOrderDao.insert(raffleActivityOrder);
 //                    更新账户
-                    int count = raffleActivityAccountDao.updateAccountQuota(raffleActivityAccount);
-                    if(count==0){
-//                        创建账户
+                    RaffleActivityAccount raffleActivityAccountRes = raffleActivityAccountDao.queryAccountByUserId(raffleActivityAccount);
+                    if (null == raffleActivityAccountRes) {
                         raffleActivityAccountDao.insert(raffleActivityAccount);
+                    } else {
+                        raffleActivityAccountDao.updateAccountQuota(raffleActivityAccount);
                     }
 //                    更新账户-月
                     raffleActivityAccountMonthDao.addAccountQuota(raffleActivityAccountMonth);
@@ -186,6 +190,7 @@ public class ActivityRepository implements IActivityRepository {
             });
         }finally {
             dbRouter.clear();
+            lock.unlock();
         }
     }
 

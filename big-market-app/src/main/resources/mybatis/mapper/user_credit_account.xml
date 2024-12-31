@@ -17,6 +17,11 @@
         where user_id=#{userId}
     </update>
 
+    <select id="queryUserCreditAccount" resultMap="dataMap">
+        select user_id, total_amount, available_amount, account_status from user_credit_account
+        where user_id = #{userId}
+    </select>
+
     <resultMap id="dataMap" type="com.aqiu.infrastructure.persistent.po.UserCreditAccount">
         <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
