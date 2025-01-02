@@ -1,6 +1,7 @@
 package com.aqiu.domain.activity.service;
 
 import com.aqiu.domain.activity.model.entity.ActivityAccountEntity;
+import com.aqiu.domain.activity.model.entity.DeliveryOrderEntity;
 import com.aqiu.domain.activity.model.entity.SkuRechargeEntity;
 
 /**
@@ -13,6 +14,12 @@ public interface IRaffleActivityAccountQuotaService {
      * @param skuRechargeEntity
      */
     String createOrder(SkuRechargeEntity skuRechargeEntity);
+
+    /**
+     * 更新订单&额度充值
+     * @param deliveryOrderEntity
+     */
+    void updateOrder(DeliveryOrderEntity deliveryOrderEntity);
 
     /**
      * 查询用户当天参与抽奖活动次数

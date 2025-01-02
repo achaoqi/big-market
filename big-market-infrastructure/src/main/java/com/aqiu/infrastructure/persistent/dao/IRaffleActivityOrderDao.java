@@ -4,6 +4,7 @@ import cn.bugstack.middleware.db.router.annotation.DBRouter;
 import cn.bugstack.middleware.db.router.annotation.DBRouterStrategy;
 import com.aqiu.infrastructure.persistent.po.RaffleActivityOrder;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,4 +17,9 @@ public interface IRaffleActivityOrderDao {
     @DBRouter
     List<RaffleActivityOrder> queryRaffleActivityOrderByUserId(String userId);
 
+    @DBRouter
+    RaffleActivityOrder queryRaffleActivityOrder(RaffleActivityOrder raffleActivityOrderReq);
+
+    @DBRouter
+    int updateOrderCompleted(RaffleActivityOrder raffleActivityOrderReq);
 }
